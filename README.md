@@ -411,7 +411,7 @@ P.S. If you need help️ or want to say thanks, 👇 Join the Discord.
 [⛳️gem-namespace]: https://github.com/galtzo-floss/timecop-rspec
 [⛳️namespace-img]: https://img.shields.io/badge/namespace-Timecop%3A%3ARspec-brightgreen.svg?style=flat&logo=ruby&logoColor=white
 [⛳️gem-name]: https://rubygems.org/gems/timecop-rspec
-[⛳️name-img]: https://img.shields.io/badge/name-timecop-rspec-brightgreen.svg?style=flat&logo=rubygems&logoColor=red
+[⛳️name-img]: https://img.shields.io/badge/name-timecop--rspec-brightgreen.svg?style=flat&logo=rubygems&logoColor=red
 [🚂maint-blog]: http://www.railsbling.com/tags/timecop-rspec
 [🚂maint-blog-img]: https://img.shields.io/badge/blog-railsbling-0093D0.svg?style=for-the-badge&logo=rubyonrails&logoColor=orange
 [🚂maint-contact]: http://www.railsbling.com/contact

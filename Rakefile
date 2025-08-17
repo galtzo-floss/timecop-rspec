@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Galtzo FLOSS Rakefile v1.0.6 - 2025-08-16
+# Galtzo FLOSS Rakefile v1.0.7 - 2025-08-17
 #
 # CHANGELOG
 # v1.0.0 - initial release w/ support for rspec, minitest, rubocop, reek, yard, and stone_checksums
@@ -10,6 +10,7 @@
 # v1.0.4 - add support for floss_funding:install
 # v1.0.5 - add support for halting in Rake tasks with binding.b (from debug gem)
 # v1.0.6 - add RBS files and checksums to YARD-generated docs site
+# v1.0.7 - works with vanilla ruby, non-gem, bundler-managed, projects
 #
 # MIT License (see License.txt)
 #
@@ -48,8 +49,7 @@
 DEBUGGING = ENV.fetch("DEBUG", "false").casecmp("true").zero?
 
 # External gems
-require "bundler/gem_tasks"
-require "rbconfig"
+require "bundler/gem_tasks" if File.exist?("*.gemspec")
 require "debug" if DEBUGGING
 
 defaults = []

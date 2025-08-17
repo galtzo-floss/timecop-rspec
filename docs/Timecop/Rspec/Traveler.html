@@ -99,7 +99,17 @@
   
 </div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Runs an example, optionally continuing a travel across invocations.</p>
 
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
 
 
 
@@ -156,7 +166,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Executes the example within the appropriate Timecop context.</p>
 </div></span>
   
 </li>
@@ -185,7 +195,33 @@
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>example</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ExampleDecorator.html" title="Timecop::Rspec::ExampleDecorator (class)">ExampleDecorator</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>travel_log</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="TravelLog.html" title="Timecop::Rspec::TravelLog (class)">TravelLog</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
 
 </div><table class="source_code">
   <tr>
@@ -193,13 +229,13 @@
       <pre class="lines">
 
 
-28
-29
-30
-31</pre>
+31
+32
+33
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/traveler.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/traveler.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_example'>example</span><span class='comma'>,</span> <span class='id identifier rubyid_travel_log'>travel_log</span><span class='rparen'>)</span>
   <span class='ivar'>@example</span> <span class='op'>=</span> <span class='id identifier rubyid_example'>example</span>
@@ -226,20 +262,37 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Executes the example within the appropriate Timecop context.<br />
+If the method is :travel, the starting time may be adjusted based on<br />
+prior trips recorded in the travel log.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-33
-34
-35
-36
-37
-38
-39
-40
 41
 42
 43
@@ -249,10 +302,18 @@
 47
 48
 49
-50</pre>
+50
+51
+52
+53
+54
+55
+56
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/traveler.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/traveler.rb', line 41</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span>
   <span class='id identifier rubyid_method'>method</span> <span class='op'>=</span> <span class='id identifier rubyid_example'>example</span><span class='period'>.</span><span class='id identifier rubyid_timecop_method'>timecop_method</span>
@@ -282,7 +343,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sun Aug 17 13:12:57 2025 by
+  Generated on Sun Aug 17 13:17:52 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

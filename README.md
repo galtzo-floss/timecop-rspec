@@ -131,7 +131,7 @@ NOTE: Be prepared to track down certs for signed gems and add them the same way 
 ```ruby
 # spec_helper.rb or some configuration file loaded by spec_helper.rb
 
-require 'timecop/rspec'
+require "timecop/rspec"
 
 RSpec.configure do |config|
   config.around(:example) do |example|
@@ -148,11 +148,11 @@ RSpec metadata, or the global travel time.
 ```ruby
 # spec_helper.rb or some configuration file loaded by spec_helper.rb
 
-require 'timecop/rspec'
+require "timecop/rspec"
 
 RSpec.configure do |config|
   config.around(:example) do |example|
-    Timecop::Rspec.time_machine(sequential: true).run(example)
+    Timecop::Rspec.time_machine(:sequential => true).run(example)
   end
 end
 ```
@@ -165,12 +165,12 @@ example ended. E.g.
 ```ruby
 # GLOBAL_TIME_TRAVEL_TIME=2014-11-15 bundle exec rspec some_spec.rb
 
-it 'example 1' do
+it "example 1" do
   Time.now # => 2014-11-15 00:00:00
   sleep 6
 end
 
-it 'example 2' do
+it "example 2" do
   Time.now # => 2014-11-15 00:00:06 (resumed from end of previous example)
 end
 ```
@@ -179,17 +179,17 @@ Following local travel will resume when specified time is the same as the
 previous examples specified time. If the time is different, it will
 start from the current examples specified time.
 ```ruby
-describe SomeUnit, travel: Time.new(2014, 11, 15) do
-  it 'example 1' do
+describe SomeUnit, :travel => Time.new(2014, 11, 15) do
+  it "example 1" do
     Time.now # => 2014-11-15 00:00:00
     sleep 6
   end
 
-  it 'example 2' do
+  it "example 2" do
     Time.now # => 2014-11-15 00:00:06 (resumed from end of previous example)
   end
 
-  it 'example 3', travel: Time.new(1982, 6, 16) do
+  it "example 3", :travel => Time.new(1982, 6, 16) do
     Time.now # => 1982-06-16 00:00:00
   end
 end
@@ -204,14 +204,14 @@ Timecop.travel/freeze any RSpec (describe|context|example) with
 
 ```ruby
 # Timecop.travel
-it 'some description', travel: Time.new(2014, 11, 15) do
+it "some description", :travel => Time.new(2014, 11, 15) do
   Time.now # 2014-11-15 00:00:00
   sleep 6
   Time.now # 2014-11-15 00:00:06 (6 seconds later)
 end
 
 # Timecop.freeze
-it 'some description', freeze: Time.new(2014, 11, 15) do
+it "some description", :freeze => Time.new(2014, 11, 15) do
   Time.now # 2014-11-15 00:00:00
   sleep 6
   Time.now # 2014-11-15 00:00:00 (Ruby's time hasn't advanced)
@@ -357,9 +357,8 @@ See [LICENSE.txt][📄license] for the official [Copyright Notice][📄copyright
               <img src="https://logos.galtzo.com/assets/images/galtzo-floss/avatar-128px-blank.svg" alt="Galtzo.com Logo (Wordless) by Aboling0, CC BY-SA 4.0" width="24">
             </picture>
         </a>, and timecop-rspec contributors.
-        Three files, and marked in the header of each, have been graciously stolen from the rubocop gem. Two lightly, and one heavily, edited for purpose. RuboCop is under the same MIT license, but those files are are Copyright (c) 2012-23 Bozhidar Batsov. *1
     </li>
-    <li>*1) If they were extracted into a general purpose `config_finder`, I'd use that instead, and I may do that at some point.</li>
+    <li>Copyright (c) 2014-2017 Zach Taylor & Avant</li>
 </ul>
 
 P.S. If you need help️ or want to say thanks, 👇 Join the Discord.

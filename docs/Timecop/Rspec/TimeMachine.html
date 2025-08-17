@@ -99,7 +99,17 @@
   
 </div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Executes an example using Timecop for a single, isolated time operation.</p>
 
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
 
 
 
@@ -117,7 +127,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#instance-class_method" title="instance (class method)">.<strong>instance</strong>  &#x21d2; Object </a>
+      <a href="#instance-class_method" title="instance (class method)">.<strong>instance</strong>  &#x21d2; Timecop::Rspec::TimeMachine </a>
     
 
     
@@ -131,7 +141,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Singleton instance accessor.</p>
 </div></span>
   
 </li>
@@ -163,7 +173,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Run an RSpec example, applying local timecop metadata if present.</p>
 </div></span>
   
 </li>
@@ -181,24 +191,47 @@
       <div class="method_details first">
   <h3 class="signature first" id="instance-class_method">
   
-    .<strong>instance</strong>  &#x21d2; <tt>Object</tt> 
+    .<strong>instance</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Timecop::Rspec::TimeMachine (class)">Timecop::Rspec::TimeMachine</a></span></tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Singleton instance accessor.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Timecop::Rspec::TimeMachine (class)">Timecop::Rspec::TimeMachine</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-32
-33
-34</pre>
+35
+36
+37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/time_machine.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/time_machine.rb', line 35</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span>
   <span class='ivar'>@instance</span> <span class='op'>||=</span> <span class='id identifier rubyid_new'>new</span>
@@ -223,27 +256,74 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Run an RSpec example, applying local timecop metadata if present.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>example</span>
+      
+      
+        <span class='type'>(<tt>#<span class='object_link'><a href="#run-instance_method" title="Timecop::Rspec::TimeMachine#run (method)">run</a></span></tt>, <tt>#metadata</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>An RSpec example or object responding to<br />
+the example protocol that will be wrapped by ExampleDecorator.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the result of running the example</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-36
-37
-38
-39
-40
-41
-42
-43
 44
 45
 46
-47</pre>
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/time_machine.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/time_machine.rb', line 44</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='id identifier rubyid_example'>example</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_example'>example</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ExampleDecorator.html" title="Timecop::Rspec::ExampleDecorator (class)">ExampleDecorator</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_example'>example</span><span class='rparen'>)</span>
@@ -267,7 +347,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sun Aug 17 13:12:57 2025 by
+  Generated on Sun Aug 17 13:17:52 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

@@ -99,7 +99,21 @@
   
 </div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Executes examples while allowing time travel to continue across examples.</p>
 
+<p>Uses TravelLog to coalesce sequential :travel operations when the same<br />
+method and start time are reused, enabling long-running time journeys<br />
+across multiple examples.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
 
 
 
@@ -117,7 +131,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#instance-class_method" title="instance (class method)">.<strong>instance</strong>  &#x21d2; Object </a>
+      <a href="#instance-class_method" title="instance (class method)">.<strong>instance</strong>  &#x21d2; Timecop::Rspec::SequentialTimeMachine </a>
     
 
     
@@ -131,7 +145,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Singleton instance accessor.</p>
 </div></span>
   
 </li>
@@ -163,7 +177,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Run an example with either local or global travel, or without any timecop.</p>
 </div></span>
   
 </li>
@@ -181,24 +195,47 @@
       <div class="method_details first">
   <h3 class="signature first" id="instance-class_method">
   
-    .<strong>instance</strong>  &#x21d2; <tt>Object</tt> 
+    .<strong>instance</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Timecop::Rspec::SequentialTimeMachine (class)">Timecop::Rspec::SequentialTimeMachine</a></span></tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Singleton instance accessor.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Timecop::Rspec::SequentialTimeMachine (class)">Timecop::Rspec::SequentialTimeMachine</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-32
-33
-34</pre>
+39
+40
+41</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/sequential_time_machine.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/sequential_time_machine.rb', line 39</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span>
   <span class='ivar'>@instance</span> <span class='op'>||=</span> <span class='id identifier rubyid_new'>new</span>
@@ -223,20 +260,58 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Run an example with either local or global travel, or without any timecop.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>example</span>
+      
+      
+        <span class='type'>(<tt>#<span class='object_link'><a href="#run-instance_method" title="Timecop::Rspec::SequentialTimeMachine#run (method)">run</a></span></tt>, <tt>#metadata</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-36
-37
-38
-39
-40</pre>
+46
+47
+48
+49
+50</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/sequential_time_machine.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/sequential_time_machine.rb', line 46</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='id identifier rubyid_example'>example</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_example'>example</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ExampleDecorator.html" title="Timecop::Rspec::ExampleDecorator (class)">ExampleDecorator</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_example'>example</span><span class='rparen'>)</span>
@@ -253,7 +328,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sun Aug 17 13:12:57 2025 by
+  Generated on Sun Aug 17 13:17:52 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

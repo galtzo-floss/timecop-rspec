@@ -85,7 +85,26 @@
   
 </div>
 
-<h2>Defined Under Namespace</h2>
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>RSpec integration for the timecop gem.</p>
+
+<p>Provides helpers to run examples with frozen or traveling time, and an<br />
+optional global time that applies across examples when configured via ENV.</p>
+
+<p>Environment variables:</p>
+<ul>
+  <li>GLOBAL_TIME_TRAVEL_TIME: String representation of a time (preferred)</li>
+  <li>GLOBAL_TIME_TRAVEL_DATE: String representation of a date (fallback)</li>
+</ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
 <p class="children">
   
     
@@ -107,7 +126,30 @@
     <dl class="constants">
       
         <dt id="VERSION-constant" class="">VERSION =
-          
+          <div class="docstring">
+  <div class="discussion">
+    <p>Convenience constant aliasing Version::VERSION</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
         </dt>
         <dd><pre class="code"><span class='const'><span class='object_link'><a href="Rspec/Version.html" title="Timecop::Rspec::Version (module)">Version</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Rspec/Version.html#VERSION-constant" title="Timecop::Rspec::Version::VERSION (constant)">VERSION</a></span></span></pre></dd>
       
@@ -131,7 +173,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#global_time-class_method" title="global_time (class method)">.<strong>global_time</strong>  &#x21d2; Object </a>
+      <a href="#global_time-class_method" title="global_time (class method)">.<strong>global_time</strong>  &#x21d2; Time </a>
     
 
     
@@ -145,7 +187,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>The globally configured time parsed from ENV.</p>
 </div></span>
   
 </li>
@@ -168,7 +210,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Whether a global time has been configured via ENV.</p>
 </div></span>
   
 </li>
@@ -177,7 +219,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#time_machine-class_method" title="time_machine (class method)">.<strong>time_machine</strong>(sequential: false)  &#x21d2; Object </a>
+      <a href="#time_machine-class_method" title="time_machine (class method)">.<strong>time_machine</strong>(sequential: false)  &#x21d2; Timecop::Rspec::SequentialTimeMachine, Timecop::Rspec::TimeMachine </a>
     
 
     
@@ -191,7 +233,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Selects a time machine strategy.</p>
 </div></span>
   
 </li>
@@ -209,24 +251,68 @@
       <div class="method_details first">
   <h3 class="signature first" id="global_time-class_method">
   
-    .<strong>global_time</strong>  &#x21d2; <tt>Object</tt> 
+    .<strong>global_time</strong>  &#x21d2; <tt>Time</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>The globally configured time parsed from ENV.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Time</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the parsed time</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>if ENV contains an unparsable time/date string</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-45
-46
-47</pre>
+65
+66
+67</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/timecop/rspec.rb', line 45</span>
+      <pre class="code"><span class="info file"># File 'lib/timecop/rspec.rb', line 65</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_global_time'>global_time</span>
   <span class='ivar'>@global_time</span> <span class='op'>||=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_global_time_travel_string'>global_time_travel_string</span><span class='rparen'>)</span>
@@ -247,7 +333,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
+    <p>Whether a global time has been configured via ENV.</p>
 
 
   </div>
@@ -274,12 +360,12 @@
       <pre class="lines">
 
 
-41
-42
-43</pre>
+58
+59
+60</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/timecop/rspec.rb', line 41</span>
+      <pre class="code"><span class="info file"># File 'lib/timecop/rspec.rb', line 58</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_global_time_configured?'>global_time_configured?</span>
   <span class='id identifier rubyid_global_time_travel_string'>global_time_travel_string</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
@@ -292,28 +378,74 @@
       <div class="method_details ">
   <h3 class="signature " id="time_machine-class_method">
   
-    .<strong>time_machine</strong>(sequential: false)  &#x21d2; <tt>Object</tt> 
+    .<strong>time_machine</strong>(sequential: false)  &#x21d2; <tt><span class='object_link'><a href="Rspec/SequentialTimeMachine.html" title="Timecop::Rspec::SequentialTimeMachine (class)">Timecop::Rspec::SequentialTimeMachine</a></span></tt>, <tt><span class='object_link'><a href="Rspec/TimeMachine.html" title="Timecop::Rspec::TimeMachine (class)">Timecop::Rspec::TimeMachine</a></span></tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Selects a time machine strategy.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>sequential</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>when true, uses a sequential strategy that<br />
+can continue a travel across examples; when false, uses a simple per<br />
+example strategy.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Rspec/SequentialTimeMachine.html" title="Timecop::Rspec::SequentialTimeMachine (class)">Timecop::Rspec::SequentialTimeMachine</a></span></tt>, <tt><span class='object_link'><a href="Rspec/TimeMachine.html" title="Timecop::Rspec::TimeMachine (class)">Timecop::Rspec::TimeMachine</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-33
-34
-35
-36
-37
-38
-39</pre>
+48
+49
+50
+51
+52
+53
+54</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/timecop/rspec.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'lib/timecop/rspec.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_time_machine'>time_machine</span><span class='lparen'>(</span><span class='label'>sequential:</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_sequential'>sequential</span>
@@ -332,7 +464,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sun Aug 17 13:12:57 2025 by
+  Generated on Sun Aug 17 13:17:52 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

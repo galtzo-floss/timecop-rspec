@@ -26,6 +26,12 @@ It has a great API, and I was about to build this exact thing myself, so I am gl
 I've modernized everything, added more tests and documentation, and released it.
 Thanks to the long-term stability of both RSpec and Timecop, the original code still works perfectly.
 
+Improvements over original:
+- The original only supported Ruby 2.2+, but I've backfilled support to 1.9.2 (to align with the max-min version between RSpec & Timecop).
+- Added tests for 100% line coverage.
+- Added documentation for all public methods.
+- removed runtime (and dev) dependency on `activesupport`.
+
 I expect the current release of this gem to be compatible with Ruby 1.9.2+,
 but it is only tested on CI against Ruby 2.3+,
 due to the inherent limitations of GitHub Actions.

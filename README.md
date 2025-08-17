@@ -19,9 +19,25 @@
 
 [Timecop::Rspec](https://github.com/avantoss/timecop-rspec) provides [Timecop](https://github.com/travisjeffery/timecop) time-machines for [RSpec](https://github.com/rspec/rspec) that allow you to time-travel test examples, context/describes, and/or your entire test suite.
 
+The gem was never released by its original author, who later moved on to work in other languages.
+[Zach Taylor](https://github.com/taylorzr) did a great job with it,
+and people have been [hoping it would be published](https://github.com/avantoss/timecop-rspec/issues/2).
+It has a great API, and I was about to build this exact thing myself, so I am glad I found this.
+I've modernized everything, added more tests and documentation, and released it.
+Thanks to the long-term stability of both RSpec and Timecop, the original code still works perfectly.
+
 I expect the current release of this gem to be compatible with Ruby 1.9.2+,
 but it is only tested on CI against Ruby 2.3+,
 due to the inherent limitations of GitHub Actions.
+
+<details>
+  <summary>Alternative Libraries</summary>
+
+I have only found one, but it didn't have the API I wanted.
+
+- [rspec-timecop](https://github.com/sugarcrm/rspec-timecop) - A very different approach
+
+</details>
 
 | 🚚 _Amazing_ test matrix was brought to you by | 🔎 appraisal2 🔎                                                                    |
 |------------------------------------------------|-------------------------------------------------------------------------------------|

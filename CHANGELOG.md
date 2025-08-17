@@ -14,9 +14,9 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 
 ## [1.0.0] - 2025-08-17
 - TAG: [v1.0.0][1.0.0t]
-- COVERAGE:  96.15% -- 125/130 lines in 7 files
-- BRANCH COVERAGE:  84.62% -- 22/26 branches in 7 files
-- 28.57% documented
+- COVERAGE: 100.00% -- 131/131 lines in 7 files
+- BRANCH COVERAGE:  92.31% -- 24/26 branches in 7 files
+- 100% documented
 ### Added
 - Initial release to rubygems (8 years late!)
 

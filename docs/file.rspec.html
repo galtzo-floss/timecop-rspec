@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  File: SECURITY
+  File: rspec
   
     &mdash; Documentation by YARD 0.9.37
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/common.css" type="text/css" />
 
 <script type="text/javascript">
-  pathId = "SECURITY";
+  pathId = "rspec";
   relpath = '';
 </script>
 
@@ -37,7 +37,7 @@
         <div id="menu">
   
     <a href="_index.html">Index</a> &raquo; 
-    <span class="title">File: SECURITY</span>
+    <span class="title">File: rspec</span>
   
 </div>
 
@@ -57,37 +57,45 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'><h1 id="security-policy">Security Policy</h1>
+      <div id="content"><div id='filecontents'><p>class Timecop<br>
+  module Rspec<br>
+    module Version<br>
+    end</p>
 
-<h2 id="supported-versions">Supported Versions</h2>
+<pre class="code ruby"><code class="ruby">class TimeMachine
+  def self.instance: () -&gt; TimeMachine
+  def run: (untyped example) -&gt; untyped
+end
 
-<table>
-  <thead>
-    <tr>
-      <th>Version</th>
-      <th>Supported</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1.latest</td>
-      <td>✅</td>
-    </tr>
-  </tbody>
-</table>
+class SequentialTimeMachine
+  def self.instance: () -&gt; SequentialTimeMachine
+  def run: (untyped example) -&gt; untyped
+end
 
-<h2 id="security-contact-information">Security contact information</h2>
+class ExampleDecorator &lt; ::SimpleDelegator
+  def timecop?: () -&gt; bool
+  def timecop_method: () -&gt; (:freeze | :travel)?
+  def timecop_time: () -&gt; untyped
+  def local_timecop?: () -&gt; bool
+  def global_timecop?: () -&gt; bool
+  def skip_global_timecop?: () -&gt; bool
+end
 
-<p>To report a security vulnerability, please use the<br>
-<a href="https://tidelift.com/security">Tidelift security contact</a>.<br>
-Tidelift will coordinate the fix and disclosure.</p>
+class Traveler
+  def initialize: (ExampleDecorator example, TravelLog travel_log) -&gt; void
+  def run: () -&gt; untyped
+end
 
-<h2 id="additional-support">Additional Support</h2>
+class TravelLog
+  def initialize: (*untyped) -&gt; void
+  def resume_or_new_trip: ((:travel | :freeze) travel_method, untyped start_time) -&gt; untyped
+  def pause_trip: () -&gt; void
+end
 
-<p>If you are interested in support for versions older than the latest release,<br>
-please consider sponsoring the project / maintainer @ https://liberapay.com/pboling/donate,<br>
-or find other sponsorship links in the <a href="index.html" title="README">README</a>.</p>
-
+def self.time_machine: (*untyped) -&gt; (SequentialTimeMachine | TimeMachine)
+def self.global_time_configured?: () -&gt; bool
+def self.global_time: () -&gt; ::Time   end end
+</code></pre>
 </div></div>
 
       <div id="footer">

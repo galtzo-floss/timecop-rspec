@@ -14,8 +14,8 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 
 ## [1.0.1] - 2025-08-17
 - TAG: [v1.0.1][1.0.1t]
-- COVERAGE: 100.00% -- 131/131 lines in 7 files
-  BRANCH COVERAGE:  92.31% -- 24/26 branches in 7 files
+- COVERAGE: 100.00% -- 132/132 lines in 7 files
+- BRANCH COVERAGE:  92.31% -- 24/26 branches in 7 files
 - 100% documented
 ### Changed
 - refactored to remove dependency on activesupport

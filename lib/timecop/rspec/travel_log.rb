@@ -47,7 +47,7 @@ class Timecop
       # Pauses the current trip, recording its duration.
       # @return [void]
       def pause_trip
-        self.trip_duration = Time.current - coalesced_start_time
+        self.trip_duration = Time.now - coalesced_start_time
       end
 
       private
@@ -75,7 +75,7 @@ class Timecop
       # The start time for resuming a trip including the elapsed duration.
       # @return [Object]
       def resume_trip
-        coalesced_start_time + trip_duration.seconds
+        coalesced_start_time + trip_duration
       end
 
       # Coerces various time-like inputs into a Time-like baseline.
@@ -83,9 +83,11 @@ class Timecop
       def coalesced_start_time
         case start_time
         when DateTime
-          start_time
+          # Convert to a Time in local zone to perform arithmetic in seconds
+          start_time.to_time
         when Date
-          start_time.at_beginning_of_day
+          # Midnight in local time for the given date
+          Time.local(start_time.year, start_time.month, start_time.day, 0, 0, 0)
         when String
           Time.parse(start_time)
         else

@@ -112,7 +112,6 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency("activesupport", ">= 4.0")                        # ruby > 1.8.7
   spec.add_dependency("rspec", "~> 3.0")                                # ruby > 0
   spec.add_dependency("timecop", ">= 0.7", "< 1")                       # ruby >= 1.9.2, for time-based testing
 

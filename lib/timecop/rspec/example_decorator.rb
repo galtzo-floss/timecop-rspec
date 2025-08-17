@@ -51,7 +51,7 @@ class Timecop
       # Whether the example has local timecop metadata.
       # @return [Boolean]
       def local_timecop?
-        local_timecop_method.present?
+        !local_timecop_method.nil?
       end
 
       # Whether a global time is configured and not skipped by the example.

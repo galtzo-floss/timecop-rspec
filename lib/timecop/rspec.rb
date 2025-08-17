@@ -23,7 +23,6 @@
 # THE SOFTWARE.
 
 require "timecop/rspec/version"
-require "active_support/all"
 
 Dir.glob(File.join(__dir__, "rspec", "**", "*.rb")).each { |file| require file }
 
@@ -56,7 +55,8 @@ class Timecop
       # Whether a global time has been configured via ENV.
       # @return [Boolean]
       def global_time_configured?
-        global_time_travel_string.present?
+        str = global_time_travel_string
+        !(str.nil? || str == "")
       end
 
       # The globally configured time parsed from ENV.

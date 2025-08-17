@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.9.37
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'><h1 id="timecoprspec">Timecop::Rspec</h1>
+
+<p><a href="https://github.com/avantoss/timecop-rspec">Timecop::Rspec</a> provides <a href="https://github.com/travisjeffery/timecop">Timecop</a> time-machines for <a href="https://github.com/rspec/rspec">RSpec</a> that allow you to time-travel test examples, context/describes, and/or your entire test suite.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Add this line to your application’s Gemfile:</p>
+
+<pre class="code language-ruby"><code class="language-ruby">gem &#39;timecop-rspec&#39;
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre class="code ruby"><code class="ruby">$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre class="code ruby"><code class="ruby">$ gem install timecop-rspec
+</code></pre>
+
+<h2 id="configuration">Configuration</h2>
+
+<h4 id="regular-time-machine">Regular Time Machine</h4>
+
+<pre class="code language-ruby"><code class="language-ruby"># spec_helper.rb or some configuration file loaded by spec_helper.rb
+
+require &#39;timecop/rspec&#39;
+
+RSpec.configure do |config|
+  config.around(:example) do |example|
+    Timecop::Rspec.time_machine.run(example)
+  end
+end
+</code></pre>
+
+<p>The regular time machine will run each example at the time specified by the<br>
+RSpec metadata, or the global travel time.</p>
+
+<h4 id="sequential-time-machine">Sequential Time Machine</h4>
+
+<pre class="code language-ruby"><code class="language-ruby"># spec_helper.rb or some configuration file loaded by spec_helper.rb
+
+require &#39;timecop/rspec&#39;
+
+RSpec.configure do |config|
+  config.around(:example) do |example|
+    Timecop::Rspec.time_machine(sequential: true).run(example)
+  end
+end
+</code></pre>
+
+<p>The sequential time machine is almost the same as the regular time machine,<br>
+except that it will sometimes resume time travel.</p>
+
+<p>Global travel will always resume from when the previous global traveled<br>
+example ended. E.g.</p>
+<pre class="code language-ruby"><code class="language-ruby"># GLOBAL_TIME_TRAVEL_TIME=2014-11-15 bundle exec rspec some_spec.rb
+
+it &#39;example 1&#39; do
+  Time.now # =&gt; 2014-11-15 00:00:00
+  sleep 6
+end
+
+it &#39;example 2&#39; do
+  Time.now # =&gt; 2014-11-15 00:00:06 (resumed from end of previous example)
+end
+</code></pre>
+
+<p>Following local travel will resume when specified time is the same as the<br>
+previous examples specified time. If the time is different, it will<br>
+start from the current examples specified time.</p>
+<pre class="code language-ruby"><code class="language-ruby">describe SomeUnit, travel: Time.new(2014, 11, 15) do
+  it &#39;example 1&#39; do
+    Time.now # =&gt; 2014-11-15 00:00:00
+    sleep 6
+  end
+
+  it &#39;example 2&#39; do
+    Time.now # =&gt; 2014-11-15 00:00:06 (resumed from end of previous example)
+  end
+
+  it &#39;example 3&#39;, travel: Time.new(1982, 6, 16) do
+    Time.now # =&gt; 1982-06-16 00:00:00
+  end
+end
+</code></pre>
+
+<h2 id="usage">Usage</h2>
+
+<h4 id="local-time-travel">Local Time Travel</h4>
+
+<p>Timecop.travel/freeze any RSpec (describe|context|example) with<br>
+<code>:travel</code> or <code>:freeze</code> metadata.</p>
+
+<pre class="code language-ruby"><code class="language-ruby"># Timecop.travel
+it &#39;some description&#39;, travel: Time.new(2014, 11, 15) do
+  Time.now # 2014-11-15 00:00:00
+  sleep 6
+  Time.now # 2014-11-15 00:00:06 (6 seconds later)
+end
+
+# Timecop.freeze
+it &#39;some description&#39;, freeze: Time.new(2014, 11, 15) do
+  Time.now # 2014-11-15 00:00:00
+  sleep 6
+  Time.now # 2014-11-15 00:00:00 (Ruby&#39;s time hasn&#39;t advanced)
+end
+</code></pre>
+
+<h4 id="global-time-travel">Global Time Travel</h4>
+
+<p>Using global time travel will Timecop.travel any example that isn’t<br>
+already time traveling. I.e. example level timecop metadata will take<br>
+precedence.</p>
+
+<pre class="code language-sh"><code class="language-sh">GLOBAL_TIME_TRAVEL_TIME=2014-11-15 bundle exec rspec spec/some_directory/
+</code></pre>
+
+<p>The global time travel can also be skipped. You may want to skip<br>
+time travel when testing with some external service, such as redis,<br>
+where you can’t modify time the same way as within ruby.</p>
+
+<pre class="code language-ruby"><code class="language-ruby">it &#39;some example that can&#39;t time travel&#39;, :skip_global_travel do
+  # Time.now will be real time
+end
+</code></pre>
+
+<h2 id="development">Development</h2>
+
+<p>After checking out the repo, run <code>bin/setup</code> to install dependencies. Then, run <code>rake spec</code> to run the tests. You can also run <code>bin/console</code> for an interactive prompt that will allow you to experiment.</p>
+
+<p>To install this gem onto your local machine, run <code>bundle exec rake install</code>. To release a new version, update the version number in <code>version.rb</code>, and then run <code>bundle exec rake release</code>, which will create a git tag for the version, push git commits and tags, and push the <code>.gem</code> file to <a href="https://rubygems.org">rubygems.org</a>.</p>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>Bug reports and pull requests are welcome on GitHub at https://github.com/avantoss/timecop-rspec.</p>
+
+<h2 id="license">License</h2>
+
+<p>The gem is available as open source under the terms of the <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+</div></div>
+
+      <div id="footer">
+  Generated on Sun Aug 17 04:17:59 2025 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.37 (ruby-3.4.5).
+</div>
+
+    </div>
+  </body>
+</html>

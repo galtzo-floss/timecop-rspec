@@ -24,6 +24,14 @@
 
 class Timecop
   module Rspec
-    VERSION = '1.0.0'
+    # Version namespace for Timecop::Rspec.
+    module Version
+      # The gem version.
+      # @return [String]
+      VERSION = "1.0.0"
+    end
+    # Convenience constant aliasing Version::VERSION
+    # @return [String]
+    VERSION = Version::VERSION
   end
 end

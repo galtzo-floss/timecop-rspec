@@ -24,8 +24,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'bundler/setup'
-require 'timecop/rspec'
+require "bundler/setup"
+require "timecop/rspec"
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
@@ -34,5 +34,5 @@ require 'timecop/rspec'
 # require 'pry'
 # Pry.start
 
-require 'irb'
+require "irb"
 IRB.start(__FILE__)

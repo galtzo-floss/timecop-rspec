@@ -1,0 +1,76 @@
+{
+  "Rakefile:4239167067": [
+    [67, 5, 15, "Rake/Desc: Describe the task with `desc` method.", 842824456]
+  ],
+  "lib/timecop/rspec.rb:919485649": [
+    [66, 9, 12, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 990613604]
+  ],
+  "lib/timecop/rspec/sequential_time_machine.rb:757109961": [
+    [39, 7, 53, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 496991953],
+    [40, 9, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 356709996]
+  ],
+  "lib/timecop/rspec/time_machine.rb:2818630369": [
+    [35, 7, 53, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 496991953],
+    [36, 9, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 356709996]
+  ],
+  "spec/timecop/rspec/a_time_machine.rb:1115759165": [
+    [47, 13, 29, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 2090924979],
+    [50, 7, 64, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 1461883873],
+    [53, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [60, 7, 56, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 643029529],
+    [64, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [71, 7, 53, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 3086872678],
+    [75, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [82, 7, 124, "RSpec/MultipleExpectations: Example has too many expectations [6/1].", 676965629],
+    [87, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [93, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [99, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [105, 7, 36, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 1669892008],
+    [109, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [115, 7, 42, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 2672670916],
+    [116, 23, 33, "Style/DateTime: Prefer `Time` over `DateTime`.", 2306291980],
+    [119, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [128, 7, 62, "RSpec/MultipleExpectations: Example has too many expectations [5/1].", 1809499334],
+    [129, 23, 25, "Style/DateTime: Prefer `Time` over `DateTime`.", 2011980225],
+    [136, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [145, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [151, 7, 131, "RSpec/MultipleExpectations: Example has too many expectations [6/1].", 2099780707],
+    [155, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [160, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [165, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [171, 15, 35, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 710711823],
+    [172, 9, 81, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 262796784],
+    [174, 30, 8, "RSpec/InstanceVariable: Avoid instance variables - use let, a method call, or a local variable (if possible).", 2321415930],
+    [177, 37, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [184, 9, 78, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 2987422127],
+    [186, 30, 8, "RSpec/InstanceVariable: Avoid instance variables - use let, a method call, or a local variable (if possible).", 2321981723],
+    [189, 37, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [198, 13, 28, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 830037094],
+    [201, 7, 48, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 1915717479],
+    [202, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [213, 7, 70, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 3183424212],
+    [217, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [224, 7, 70, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 1685240264],
+    [228, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [235, 7, 67, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 4130782052],
+    [239, 35, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950]
+  ],
+  "spec/timecop/rspec/sequential_time_machine_spec.rb:1307381905": [
+    [42, 3, 124, "RSpec/MultipleExpectations: Example has too many expectations [6/1].", 676965629],
+    [47, 31, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [52, 31, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [57, 31, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [67, 11, 28, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 830037094],
+    [75, 5, 72, "RSpec/MultipleExpectations: Example has too many expectations [6/1].", 2221852238],
+    [77, 33, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [82, 33, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [87, 33, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950]
+  ],
+  "timecop-rspec.gemspec:4269185173": [
+    [108, 3, 3, "Gemspec/DuplicatedAssignment: `files=` method calls already given on line 62 of the gemspec.", 193433027],
+    [108, 16, 19, "Packaging/GemspecGit: Avoid using git to produce lists of files. Downstreams often need to build your package in an environment that does not have git (on purpose). Use some pure Ruby alternative, like `Dir` or `Dir.glob`.", 3879951891],
+    [111, 3, 19, "Gemspec/DuplicatedAssignment: `bindir=` method calls already given on line 104 of the gemspec.", 554494033],
+    [112, 3, 70, "Gemspec/DuplicatedAssignment: `executables=` method calls already given on line 106 of the gemspec.", 18210340],
+    [113, 3, 28, "Gemspec/DuplicatedAssignment: `require_paths=` method calls already given on line 103 of the gemspec.", 1947597918]
+  ]
+}

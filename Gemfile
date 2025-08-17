@@ -1,28 +1,38 @@
-# The MIT License (MIT)
+# frozen_string_literal: true
 
-# Copyright (c) 2014-2017 Avant
+source "https://rubygems.org"
 
-# Author Zach Taylor
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
+git_source(:gitlab) { |repo_name| "https://gitlab.com/#{repo_name}" }
 
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
+#### IMPORTANT #######################################################
+# Gemfile is for local development ONLY; Gemfile is NOT loaded in CI #
+####################################################### IMPORTANT ####
 
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
-
-source 'https://rubygems.org'
-
-# Specify your gem's dependencies in timecop-rspec.gemspec
+# Include dependencies from <gem name>.gemspec
 gemspec
+
+platform :mri do
+  # Debugging - Ensure ENV["DEBUG"] == "true" to use debuggers within spec suite
+  # Use binding.break, binding.b, or debugger in code
+  gem "debug", ">= 1.0.0"                  # ruby >= 2.7
+  gem "gem_bench", "~> 2.0", ">= 2.0.5"
+
+  # Dev Console - Binding.pry - Irb replacement
+  gem "pry", "~> 0.14"                     # ruby >= 2.0
+end
+
+# optional dependency for debug logging
+gem "logger"
+
+# Security Audit
+eval_gemfile "gemfiles/modular/audit.gemfile"
+
+# Code Coverage
+eval_gemfile "gemfiles/modular/coverage.gemfile"
+
+# Linting
+eval_gemfile "gemfiles/modular/style.gemfile"
+
+# Documentation
+eval_gemfile "gemfiles/modular/documentation.gemfile"

@@ -71,9 +71,25 @@
 
 <p><a href="https://github.com/avantoss/timecop-rspec">Timecop::Rspec</a> provides <a href="https://github.com/travisjeffery/timecop">Timecop</a> time-machines for <a href="https://github.com/rspec/rspec">RSpec</a> that allow you to time-travel test examples, context/describes, and/or your entire test suite.</p>
 
+<p>The gem was never released by its original author, who later moved on to work in other languages.<br>
+<a href="https://github.com/taylorzr">Zach Taylor</a> did a great job with it,<br>
+and people have been <a href="https://github.com/avantoss/timecop-rspec/issues/2">hoping it would be published</a>.<br>
+It has a great API, and I was about to build this exact thing myself, so I am glad I found this.<br>
+I’ve modernized everything, added more tests and documentation, and released it.<br>
+Thanks to the long-term stability of both RSpec and Timecop, the original code still works perfectly.</p>
+
 <p>I expect the current release of this gem to be compatible with Ruby 1.9.2+,<br>
 but it is only tested on CI against Ruby 2.3+,<br>
 due to the inherent limitations of GitHub Actions.</p>
+
+<details>
+  <summary>Alternative Libraries</summary>
+
+I have only found one, but it didn't have the API I wanted.
+
+- [rspec-timecop](https://github.com/sugarcrm/rspec-timecop) - A very different approach
+
+</details>
 
 <table>
   <thead>
@@ -497,7 +513,7 @@ See <a href="file.LICENSE.html" title="LICENSE.txt">LICENSE.txt</a> for the offi
 </div></div>
 
       <div id="footer">
-  Generated on Sun Aug 17 13:54:51 2025 by
+  Generated on Sun Aug 17 14:28:06 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

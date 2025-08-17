@@ -49,7 +49,7 @@
 DEBUGGING = ENV.fetch("DEBUG", "false").casecmp("true").zero?
 
 # External gems
-require "bundler/gem_tasks" if File.exist?("*.gemspec")
+require "bundler/gem_tasks" if !Dir["*.gemspec"].empty?
 require "debug" if DEBUGGING
 
 defaults = []

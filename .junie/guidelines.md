@@ -1,4 +1,4 @@
-Project: floss_funding — Development Guidelines (for advanced contributors)
+Project: timecop-rspec — Development Guidelines (for advanced contributors)
 
 This document captures project-specific knowledge to streamline setup, testing, and ongoing development.
 
@@ -61,7 +61,7 @@ This document captures project-specific knowledge to streamline setup, testing, 
     - bundle exec rspec --format progress
   - Focused runs
     - You can run a single file or example, but note: coverage thresholds need to be disabled with K_SOUP_COV_MIN_HARD=false
-    - Example: K_SOUP_COV_MIN_HARD=false bin/rspec spec/floss_funding/library_spec.rb:42
+    - Example: K_SOUP_COV_MIN_HARD=false bin/rspec spec/timecop-rspec/class_spec.rb:42
   - Output visibility
     - To see STDOUT from the code under test, use the :check_output tag on the example or group.
       Example:
@@ -88,7 +88,7 @@ This document captures project-specific knowledge to streamline setup, testing, 
   - Use Timecop for deterministic time-sensitive behavior as needed (require config/timecop is already done by spec_helper).
 - Demonstrated example (executed and verified during this session)
   - Example spec content used:
-    - File: spec/floss_funding/demo_spec.rb
+    - File: spec/timecop-rspec/demo_spec.rb
       RSpec.describe "Demo test for guidelines" do
         it "has a non-empty version string" do
           expect(FlossFunding::Version::VERSION).to be_a(String)
@@ -96,7 +96,7 @@ This document captures project-specific knowledge to streamline setup, testing, 
         end
       end
   - Commands run:
-    - bundle exec rspec spec/floss_funding/demo_spec.rb — this ran but failed coverage thresholds (expected when running subsets with coverage on).
+    - bundle exec rspec spec/timecop-rspec/demo_spec.rb — this ran but failed coverage thresholds (expected when running subsets with coverage on).
     - bundle exec rspec — running the full suite including the demo spec passed; overall coverage: ~93.67% lines, ~74.07% branches.
   - Cleanup: The demo spec file was removed after verification per instructions.
 

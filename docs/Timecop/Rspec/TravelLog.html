@@ -264,12 +264,12 @@
       <pre class="lines">
 
 
-31
-32
-33</pre>
+7
+8
+9</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/travel_log.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/travel_log.rb', line 7</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_travel_method'>travel_method</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_start_time'>start_time</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new_trip'>new_trip</span><span class='lparen'>(</span><span class='id identifier rubyid_travel_method'>travel_method</span><span class='comma'>,</span> <span class='id identifier rubyid_start_time'>start_time</span><span class='rparen'>)</span>
@@ -311,15 +311,15 @@
       <pre class="lines">
 
 
-49
-50
-51</pre>
+25
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/travel_log.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/travel_log.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pause_trip'>pause_trip</span>
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_trip_duration'>trip_duration</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span> <span class='op'>-</span> <span class='id identifier rubyid_coalesced_start_time'>coalesced_start_time</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_trip_duration'>trip_duration</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span> <span class='op'>-</span> <span class='id identifier rubyid_coalesced_start_time'>coalesced_start_time</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -402,16 +402,16 @@
       <pre class="lines">
 
 
-39
-40
-41
-42
-43
-44
-45</pre>
+15
+16
+17
+18
+19
+20
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/travel_log.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'lib/timecop/rspec/travel_log.rb', line 15</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_resume_or_new_trip'>resume_or_new_trip</span><span class='lparen'>(</span><span class='id identifier rubyid_travel_method'>travel_method</span><span class='comma'>,</span> <span class='id identifier rubyid_start_time'>start_time</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_resume_trip?'>resume_trip?</span><span class='lparen'>(</span><span class='id identifier rubyid_travel_method'>travel_method</span><span class='comma'>,</span> <span class='id identifier rubyid_start_time'>start_time</span><span class='rparen'>)</span>
@@ -430,7 +430,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sun Aug 17 14:43:14 2025 by
+  Generated on Sun Aug 17 16:37:27 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

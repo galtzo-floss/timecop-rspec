@@ -78,6 +78,14 @@ It has a great API, and I was about to build this exact thing myself, so I am gl
 I’ve modernized everything, added more tests and documentation, and released it.<br>
 Thanks to the long-term stability of both RSpec and Timecop, the original code still works perfectly.</p>
 
+<p>Improvements over original:</p>
+<ul>
+  <li>The original only supported Ruby 2.2+, but I’ve backfilled support to 1.9.2 (to align with the max-min version between RSpec &amp; Timecop).</li>
+  <li>Added tests for 100% line coverage.</li>
+  <li>Added documentation for all public methods.</li>
+  <li>removed runtime (and dev) dependency on <code>activesupport</code>.</li>
+</ul>
+
 <p>I expect the current release of this gem to be compatible with Ruby 1.9.2+,<br>
 but it is only tested on CI against Ruby 2.3+,<br>
 due to the inherent limitations of GitHub Actions.</p>
@@ -513,7 +521,7 @@ See <a href="file.LICENSE.html" title="LICENSE.txt">LICENSE.txt</a> for the offi
 </div></div>
 
       <div id="footer">
-  Generated on Sun Aug 17 14:43:13 2025 by
+  Generated on Sun Aug 17 16:37:27 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

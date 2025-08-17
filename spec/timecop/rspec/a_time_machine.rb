@@ -1,26 +1,3 @@
-# The MIT License (MIT)
-
-# Copyright (c) 2014-2017 Avant
-
-# Author Zach Taylor
-
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
 RSpec.shared_examples "a time machine" do
   subject(:time_machine) { described_class.new }
 
@@ -34,14 +11,15 @@ RSpec.shared_examples "a time machine" do
 
   let(:some_example) { instance_double(RSpec::Core::Example) }
 
-  let(:us_tz) { ActiveSupport::TimeZone["Central Time (US & Canada)"] }
-  let(:gb_tz) { ActiveSupport::TimeZone["London"] }
+  # ActiveSupport::TimeZone removed; tests no longer depend on Time.zone
+  let(:us_tz) { nil }
+  let(:gb_tz) { nil }
 
   describe "#run" do
     before do
       allow(ENV).to receive(:[]).and_call_original
       allow(ENV).to receive(:[]).with("GLOBAL_TIME_TRAVEL_TIME").and_return(global_travel_time)
-      allow(Time).to receive_messages(:zone => us_tz, :zone_default => us_tz)
+      # Time.zone is not used without ActiveSupport
     end
 
     context "global time travel disabled" do
@@ -62,7 +40,7 @@ RSpec.shared_examples "a time machine" do
         example_procsy.metadata[:travel] = travel_date
 
         expect(example_procsy).to receive(:run) do
-          expect(Date.current).to eq travel_date
+          expect(Date.today).to eq travel_date
         end
 
         time_machine.run(example_procsy)
@@ -83,21 +61,18 @@ RSpec.shared_examples "a time machine" do
         travel_date = Date.new(2016, 12, 15)
         example_procsy.metadata[:travel] = travel_date
 
-        allow(Time).to receive_messages(:zone => us_tz, :zone_default => us_tz)
         expect(example_procsy).to receive(:run) do
-          expect(Time.current).to be_within(2.seconds).of(Time.new(2016, 12, 15, 0, 0, 0, "-06:00"))
+          expect(Time.now).to be_within(2).of(Time.local(2016, 12, 15, 0, 0, 0))
         end
         time_machine.run(example_procsy)
 
-        allow(Time).to receive_messages(:zone => gb_tz, :zone_default => gb_tz)
         expect(example_procsy).to receive(:run) do
-          expect(Time.current).to be_within(2.seconds).of(Time.new(2016, 12, 15, 0, 0, 0, "+00:00"))
+          expect(Time.now).to be_within(2).of(Time.local(2016, 12, 15, 0, 0, 0))
         end
         time_machine.run(example_procsy)
 
-        allow(Time).to receive_messages(:zone => us_tz, :zone_default => us_tz)
         expect(example_procsy).to receive(:run) do
-          expect(Time.current).to be_within(2.seconds).of(Time.new(2016, 12, 15, 0, 0, 0, "-06:00"))
+          expect(Time.now).to be_within(2).of(Time.local(2016, 12, 15, 0, 0, 0))
         end
         time_machine.run(example_procsy)
       end
@@ -107,7 +82,7 @@ RSpec.shared_examples "a time machine" do
         example_procsy.metadata[:travel] = travel_date
 
         expect(example_procsy).to receive(:run) do
-          expect(Time.current).to be_within(1.second).of(Time.new(2015, 7, 14, 12, 0, 0, "-05:00"))
+          expect(Time.now).to be_within(1).of(Time.local(2015, 7, 14, 12, 0, 0))
         end
         time_machine.run(example_procsy)
       end
@@ -120,7 +95,7 @@ RSpec.shared_examples "a time machine" do
           # The assertion is time shifted in CST, because DateTime.new uses UTC zone if none is specified
           # and will be coerced into local time zone when timecop mutates time.  The lesson here is to be sure
           # your specified DateTime zone matches your test's effective timezone when using timecop.
-          expect(Time.current).to be_within(1.second).of(Time.new(2016, 7, 15, 11, 28, 0, "-05:00"))
+          expect(Time.now).to be_within(1).of(Time.utc(2016, 7, 15, 16, 28, 0).getlocal)
         end
         time_machine.run(example_procsy)
       end
@@ -137,33 +112,33 @@ RSpec.shared_examples "a time machine" do
           # The assertion is time shifted in CST, because DateTime.new uses UTC zone if none is specified
           # and will be coerced into local time zone when timecop mutates time.  The lesson here is to be sure
           # your specified DateTime zone matches your test's effective timezone when using timecop.
-          expect(Time.current).to be_within(1.second).of(Time.new(2016, 7, 14, 19, 0, 0, "-05:00"))
+          expect(Time.now).to be_within(1).of(Time.utc(2016, 7, 15, 0, 0, 0).getlocal)
         end
         time_machine.run(example_procsy)
 
         example_procsy.metadata[:travel] = travel_date_2
         expect(example_procsy).to receive(:run) do
-          expect(Time.current).to be_within(1.second).of(Time.new(2016, 7, 15, 0, 0, 0, "-05:00"))
+          expect(Time.now).to be_within(1).of(Time.local(2016, 7, 15, 0, 0, 0))
         end
         time_machine.run(example_procsy)
       end
 
       it "does not advance example or context level time travel time when executing successive examples with the same freeze start value" do
-        travel_date = Time.new(2016, 12, 15, 0, 0, 0).getlocal
+        travel_date = Time.local(2016, 12, 15, 0, 0, 0)
         example_procsy.metadata[:freeze] = travel_date
 
         expect(example_procsy).to receive(:run) do
-          expect(Time.current).to eq travel_date
+          expect(Time.now).to eq travel_date
         end
         time_machine.run(example_procsy)
 
         expect(example_procsy).to receive(:run) do
-          expect(Time.current).to eq travel_date
+          expect(Time.now).to eq travel_date
         end
         time_machine.run(example_procsy)
 
         expect(example_procsy).to receive(:run) do
-          expect(Time.current).to eq travel_date
+          expect(Time.now).to eq travel_date
         end
         time_machine.run(example_procsy)
       end
@@ -175,7 +150,7 @@ RSpec.shared_examples "a time machine" do
           example_procsy.metadata[:travel] = travel_date
 
           expect(example_procsy).to receive(:run) do
-            expect(Date.current).to eq Date.new(2016, 6, 1)
+            expect(Date.today).to eq Date.new(2016, 6, 1)
           end
 
           time_machine.run(example_procsy)
@@ -200,11 +175,10 @@ RSpec.shared_examples "a time machine" do
 
       it "runs the example in global time travel time" do
         expect(example_procsy).to receive(:run) do
-          # Interpret the global travel time as a UTC midnight anchor, then
-          # convert into the current ActiveSupport::TimeZone date to avoid
-          # flakiness across system timezones.
-          expected_date = Time.parse(global_travel_time).in_time_zone(Time.zone).to_date
-          expect(Date.current).to eq expected_date
+          # Interpret the global travel time as a local midnight anchor and
+          # assert on Date.today to avoid timezone-specific APIs.
+          expected_date = Date.new(2015, 2, 9)
+          expect(Date.today).to eq expected_date
         end
 
         time_machine.run(example_procsy)
@@ -226,7 +200,7 @@ RSpec.shared_examples "a time machine" do
         example_procsy.metadata[:travel] = travel_date
 
         expect(example_procsy).to receive(:run) do
-          expect(Date.current).to eq travel_date
+          expect(Date.today).to eq travel_date
         end
 
         time_machine.run(example_procsy)

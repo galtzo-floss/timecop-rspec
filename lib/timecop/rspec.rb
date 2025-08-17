@@ -22,10 +22,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'timecop/rspec/version'
-require 'active_support/all'
+require "timecop/rspec/version"
+require "active_support/all"
 
-Dir.glob(File.join(__dir__, 'rspec', '**', '*.rb')).each { |file| require file }
+Dir.glob(File.join(__dir__, "rspec", "**", "*.rb")).each { |file| require file }
 
 class Timecop
   module Rspec
@@ -49,7 +49,7 @@ class Timecop
       private
 
       def global_time_travel_string
-        ENV['GLOBAL_TIME_TRAVEL_TIME'] || ENV['GLOBAL_TIME_TRAVEL_DATE']
+        ENV["GLOBAL_TIME_TRAVEL_TIME"] || ENV["GLOBAL_TIME_TRAVEL_DATE"]
       end
     end
   end

@@ -48,7 +48,7 @@ class Timecop
       def new_trip(travel_method, start_time)
         reset_duration
         self.travel_method = travel_method
-        self.start_time    = start_time
+        self.start_time = start_time
       end
 
       def resume_trip?(other_travel_method, other_start_time)

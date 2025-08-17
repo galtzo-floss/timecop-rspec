@@ -25,7 +25,7 @@
 class Timecop
   module Rspec
     module Version
-      VERSION = '1.0.0'
+      VERSION = "1.0.0"
     end
     VERSION = Version::VERSION
   end

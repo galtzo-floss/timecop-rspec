@@ -18,14 +18,14 @@ gem_version =
   end
 
 Gem::Specification.new do |spec|
-  spec.name = 'timecop-rspec'
+  spec.name = "timecop-rspec"
   spec.version = gem_version
-  spec.authors = ['Peter H. Boling', 'Zach Taylor', 'Tim Mertens']
-  spec.email = ['floss@galtzo.com']
+  spec.authors = ["Peter H. Boling", "Zach Taylor", "Tim Mertens"]
+  spec.email = ["floss@galtzo.com"]
 
   spec.summary = "Timecop time-machines for RSpec"
   spec.description = "Help overlooked open source projects - the ones at the bottom of the stack, and the dev dependencies - by funding them."
-  spec.homepage = 'https://github.com/galtzo-floss/timecop-rspec'
+  spec.homepage = "https://github.com/galtzo-floss/timecop-rspec"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 1.9.2"
 
@@ -105,16 +105,16 @@ Gem::Specification.new do |spec|
   # files listed are relative paths from bindir above.
   spec.executables = []
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
+  spec.files = %x(git ls-files -z).split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
-  spec.bindir        = 'exe'
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ['lib']
+  spec.bindir = "exe"
+  spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.require_paths = ["lib"]
 
-  spec.add_dependency("timecop", ">= 0.7", "< 1")                       # ruby >= 1.9.2, for time-based testing
-  spec.add_dependency("rspec", "~> 3.0")                                # ruby > 0
   spec.add_dependency("activesupport", ">= 4.0")                        # ruby > 1.8.7
+  spec.add_dependency("rspec", "~> 3.0")                                # ruby > 0
+  spec.add_dependency("timecop", ">= 0.7", "< 1")                       # ruby >= 1.9.2, for time-based testing
 
   # NOTE: It is preferable to list development dependencies in the gemspec due to increased
   #       visibility and discoverability on RubyGems.org.

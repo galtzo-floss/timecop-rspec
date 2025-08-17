@@ -26,17 +26,18 @@ class Timecop
   module Rspec
     class Traveler
       def initialize(example, travel_log)
-        @example    = example
+        @example = example
         @travel_log = travel_log
       end
 
       def run
         method = example.timecop_method
-        time   = example.timecop_time
+        time = example.timecop_time
 
         if method == :travel
           time = travel_log.resume_or_new_trip(
-            example.timecop_method, example.timecop_time)
+            example.timecop_method, example.timecop_time
+          )
         end
 
         ::Timecop.public_send(method, time) do

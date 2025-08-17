@@ -21,26 +21,25 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-require 'timecop/rspec'
+require "timecop/rspec"
 
-require_relative 'a_time_machine'
+require_relative "a_time_machine"
 
 RSpec.describe Timecop::Rspec::SequentialTimeMachine do
-  it_behaves_like 'a time machine'
-
   subject(:time_machine) { described_class.new }
 
+  let(:some_example) { instance_double(RSpec::Core::Example) }
   let(:example_procsy) do
     instance_double(
       RSpec::Core::Example::Procsy,
-      example:  some_example,
-      metadata: {}
+      :example => some_example,
+      :metadata => {},
     )
   end
 
-  let(:some_example) { instance_double(RSpec::Core::Example) }
+  it_behaves_like "a time machine"
 
-  it 'advances example and context level time travel time when executing successive examples with the same travel start value' do
+  it "advances example and context level time travel time when executing successive examples with the same travel start value" do
     travel_date = Date.new(2016, 12, 15)
     example_procsy.metadata[:travel] = travel_date
 
@@ -65,15 +64,15 @@ RSpec.describe Timecop::Rspec::SequentialTimeMachine do
     expect(time_2).to be < time_3
   end
 
-  context 'global time travel enabled' do
-    let(:global_travel_time) { '2015-02-09' }
+  context "global time travel enabled" do
+    let(:global_travel_time) { "2015-02-09" }
 
     before do
       allow(ENV).to receive(:[]).and_call_original
-      allow(ENV).to receive(:[]).with('GLOBAL_TIME_TRAVEL_TIME').and_return(global_travel_time)
+      allow(ENV).to receive(:[]).with("GLOBAL_TIME_TRAVEL_TIME").and_return(global_travel_time)
     end
 
-    it 'advances global time travel time when executing successive examples' do
+    it "advances global time travel time when executing successive examples" do
       time_1, time_2, time_3 = nil, nil, nil
       expect(example_procsy).to receive(:run) do
         time_1 = Time.now

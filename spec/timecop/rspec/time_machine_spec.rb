@@ -21,10 +21,10 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-require 'timecop/rspec'
+require "timecop/rspec"
 
-require_relative 'a_time_machine'
+require_relative "a_time_machine"
 
 RSpec.describe Timecop::Rspec::TimeMachine do
-  it_behaves_like 'a time machine'
+  it_behaves_like "a time machine"
 end

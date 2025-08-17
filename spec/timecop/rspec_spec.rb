@@ -21,10 +21,10 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe Timecop::Rspec do
-  it 'has a version number' do
-    expect(Timecop::Rspec::VERSION).not_to be nil
+  it "has a version number" do
+    expect(Timecop::Rspec::VERSION).not_to be_nil
   end
 end

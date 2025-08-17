@@ -22,9 +22,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require 'timecop'
+require "timecop"
 
-require_relative 'example_decorator'
+require_relative "example_decorator"
 
 class Timecop
   module Rspec
@@ -39,7 +39,7 @@ class Timecop
         return example.run unless example.timecop?
 
         method = example.timecop_method
-        time   = example.timecop_time
+        time = example.timecop_time
 
         Timecop.public_send(method, time) do
           example.run

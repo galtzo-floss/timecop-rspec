@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 ### Added
 - Initial release to rubygems (8 years late!)
 
-### 
+###
 
 [Unreleased]: https://gitlab.com/galtzo-floss/floss_funding/-/compare/v1.0.0...main
 [1.0.0]: https://gitlab.com/galtzo-floss/floss_funding/-/compare/389ece6fb9bd04013d11edca6fb6830139a84f4c...v1.0.0

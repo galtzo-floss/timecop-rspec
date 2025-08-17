@@ -21,33 +21,33 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-RSpec.shared_examples 'a time machine' do
+RSpec.shared_examples "a time machine" do
   subject(:time_machine) { described_class.new }
 
   let(:example_procsy) do
     instance_double(
       RSpec::Core::Example::Procsy,
-      example:  some_example,
-      metadata: {}
+      :example => some_example,
+      :metadata => {},
     )
   end
 
   let(:some_example) { instance_double(RSpec::Core::Example) }
 
-  let(:us_tz) { ActiveSupport::TimeZone['Central Time (US & Canada)'] }
-  let(:gb_tz) { ActiveSupport::TimeZone['London'] }
+  let(:us_tz) { ActiveSupport::TimeZone["Central Time (US & Canada)"] }
+  let(:gb_tz) { ActiveSupport::TimeZone["London"] }
 
-  describe '#run' do
+  describe "#run" do
     before do
       allow(ENV).to receive(:[]).and_call_original
-      allow(ENV).to receive(:[]).with('GLOBAL_TIME_TRAVEL_TIME').and_return(global_travel_time)
-      allow(Time).to receive_messages(zone: us_tz, zone_default: us_tz)
+      allow(ENV).to receive(:[]).with("GLOBAL_TIME_TRAVEL_TIME").and_return(global_travel_time)
+      allow(Time).to receive_messages(:zone => us_tz, :zone_default => us_tz)
     end
 
-    context 'global time travel disabled' do
+    context "global time travel disabled" do
       let(:global_travel_time) { nil }
 
-      it 'runs the example in real time when no time travel specified' do
+      it "runs the example in real time when no time travel specified" do
         original_time = Time.now
 
         expect(example_procsy).to receive(:run) do
@@ -57,7 +57,7 @@ RSpec.shared_examples 'a time machine' do
         time_machine.run(example_procsy)
       end
 
-      it 'runs the example in travelled time with a date/time' do
+      it "runs the example in travelled time with a date/time" do
         travel_date = Date.new(2016, 12, 15)
         example_procsy.metadata[:travel] = travel_date
 
@@ -68,7 +68,7 @@ RSpec.shared_examples 'a time machine' do
         time_machine.run(example_procsy)
       end
 
-      it 'runs the example in frozen time with a date/time' do
+      it "runs the example in frozen time with a date/time" do
         travel_time = Time.new(2016, 12, 15, 3, 2, 1)
         example_procsy.metadata[:freeze] = travel_time
 
@@ -79,40 +79,40 @@ RSpec.shared_examples 'a time machine' do
         time_machine.run(example_procsy)
       end
 
-      it 'advances example and context level time travel time when executing successive examples with the same travel start value' do
+      it "advances example and context level time travel time when executing successive examples with the same travel start value" do
         travel_date = Date.new(2016, 12, 15)
         example_procsy.metadata[:travel] = travel_date
 
-        allow(Time).to receive_messages(zone: us_tz, zone_default: us_tz)
+        allow(Time).to receive_messages(:zone => us_tz, :zone_default => us_tz)
         expect(example_procsy).to receive(:run) do
-          expect(Time.current).to be_within(2.seconds).of(Time.new(2016,12,15,0,0,0,'-06:00'))
+          expect(Time.current).to be_within(2.seconds).of(Time.new(2016, 12, 15, 0, 0, 0, "-06:00"))
         end
         time_machine.run(example_procsy)
 
-        allow(Time).to receive_messages(zone: gb_tz, zone_default: gb_tz)
+        allow(Time).to receive_messages(:zone => gb_tz, :zone_default => gb_tz)
         expect(example_procsy).to receive(:run) do
-          expect(Time.current).to be_within(2.seconds).of(Time.new(2016,12,15,0,0,0,'+00:00'))
+          expect(Time.current).to be_within(2.seconds).of(Time.new(2016, 12, 15, 0, 0, 0, "+00:00"))
         end
         time_machine.run(example_procsy)
 
-        allow(Time).to receive_messages(zone: us_tz, zone_default: us_tz)
+        allow(Time).to receive_messages(:zone => us_tz, :zone_default => us_tz)
         expect(example_procsy).to receive(:run) do
-          expect(Time.current).to be_within(2.seconds).of(Time.new(2016,12,15,0,0,0,'-06:00'))
+          expect(Time.current).to be_within(2.seconds).of(Time.new(2016, 12, 15, 0, 0, 0, "-06:00"))
         end
         time_machine.run(example_procsy)
       end
 
-      it 'accepts string date/time values' do
-        travel_date = '2015-7-14 12:00:00'
+      it "accepts string date/time values" do
+        travel_date = "2015-7-14 12:00:00"
         example_procsy.metadata[:travel] = travel_date
 
         expect(example_procsy).to receive(:run) do
-          expect(Time.current).to be_within(1.second).of(Time.new(2015,7,14,12,0,0,'-05:00'))
+          expect(Time.current).to be_within(1.second).of(Time.new(2015, 7, 14, 12, 0, 0, "-05:00"))
         end
         time_machine.run(example_procsy)
       end
 
-      it 'works correctly with DateTime objects' do
+      it "works correctly with DateTime objects" do
         travel_date = DateTime.new(2016, 7, 15, 16, 28)
         example_procsy.metadata[:travel] = travel_date
 
@@ -120,13 +120,13 @@ RSpec.shared_examples 'a time machine' do
           # The assertion is time shifted in CST, because DateTime.new uses UTC zone if none is specified
           # and will be coerced into local time zone when timecop mutates time.  The lesson here is to be sure
           # your specified DateTime zone matches your test's effective timezone when using timecop.
-          expect(Time.current).to be_within(1.second).of(Time.new(2016, 7, 15, 11, 28, 0,'-05:00'))
+          expect(Time.current).to be_within(1.second).of(Time.new(2016, 7, 15, 11, 28, 0, "-05:00"))
         end
         time_machine.run(example_procsy)
       end
 
-      it 'does not continue time when Date follows similar DateTime' do
-        travel_date   = DateTime.new(2016, 7, 15)
+      it "does not continue time when Date follows similar DateTime" do
+        travel_date = DateTime.new(2016, 7, 15)
         travel_date_2 = Date.new(2016, 7, 15)
 
         # Ruby considers a DateTime at start of day to be equal to a Date on the same day
@@ -137,18 +137,18 @@ RSpec.shared_examples 'a time machine' do
           # The assertion is time shifted in CST, because DateTime.new uses UTC zone if none is specified
           # and will be coerced into local time zone when timecop mutates time.  The lesson here is to be sure
           # your specified DateTime zone matches your test's effective timezone when using timecop.
-          expect(Time.current).to be_within(1.second).of(Time.new(2016, 7, 14, 19, 0, 0,'-05:00'))
+          expect(Time.current).to be_within(1.second).of(Time.new(2016, 7, 14, 19, 0, 0, "-05:00"))
         end
         time_machine.run(example_procsy)
 
         example_procsy.metadata[:travel] = travel_date_2
         expect(example_procsy).to receive(:run) do
-          expect(Time.current).to be_within(1.second).of(Time.new(2016, 7, 15, 0, 0, 0,'-05:00'))
+          expect(Time.current).to be_within(1.second).of(Time.new(2016, 7, 15, 0, 0, 0, "-05:00"))
         end
         time_machine.run(example_procsy)
       end
 
-      it 'does not advance example or context level time travel time when executing successive examples with the same freeze start value' do
+      it "does not advance example or context level time travel time when executing successive examples with the same freeze start value" do
         travel_date = Time.new(2016, 12, 15, 0, 0, 0).getlocal
         example_procsy.metadata[:freeze] = travel_date
 
@@ -168,8 +168,8 @@ RSpec.shared_examples 'a time machine' do
         time_machine.run(example_procsy)
       end
 
-      context 'specifying a proc for time travel' do
-        it 'runs the example in travelled time with a proc evaluated against the example' do
+      context "specifying a proc for time travel" do
+        it "runs the example in travelled time with a proc evaluated against the example" do
           some_example.instance_variable_set(:@my_date, Date.new(2016, 6, 1))
           travel_date = -> { @my_date }
           example_procsy.metadata[:travel] = travel_date
@@ -181,7 +181,7 @@ RSpec.shared_examples 'a time machine' do
           time_machine.run(example_procsy)
         end
 
-        it 'runs the example in frozen time with a proc evaluated against the example' do
+        it "runs the example in frozen time with a proc evaluated against the example" do
           some_example.instance_variable_set(:@my_time, Time.new(2016, 12, 15, 3, 2, 1))
           travel_time = -> { @my_time }
           example_procsy.metadata[:freeze] = travel_time
@@ -195,18 +195,22 @@ RSpec.shared_examples 'a time machine' do
       end
     end
 
-    context 'global time travel enabled' do
-      let(:global_travel_time) { '2015-02-09' }
+    context "global time travel enabled" do
+      let(:global_travel_time) { "2015-02-09" }
 
-      it 'runs the example in global time travel time' do
+      it "runs the example in global time travel time" do
         expect(example_procsy).to receive(:run) do
-          expect(Date.current).to eq Date.new(2015, 2, 9)
+          # Interpret the global travel time as a UTC midnight anchor, then
+          # convert into the current ActiveSupport::TimeZone date to avoid
+          # flakiness across system timezones.
+          expected_date = Time.parse(global_travel_time).in_time_zone(Time.zone).to_date
+          expect(Date.current).to eq expected_date
         end
 
         time_machine.run(example_procsy)
       end
 
-      it 'runs the example in real time when :skip_global_timecop specified' do
+      it "runs the example in real time when :skip_global_timecop specified" do
         original_time = Time.now
         example_procsy.metadata[:skip_global_timecop] = true
 
@@ -217,7 +221,7 @@ RSpec.shared_examples 'a time machine' do
         time_machine.run(example_procsy)
       end
 
-      it 'runs the example in travelled example time when :travel specified' do
+      it "runs the example in travelled example time when :travel specified" do
         travel_date = Date.new(2016, 12, 15)
         example_procsy.metadata[:travel] = travel_date
 
@@ -228,7 +232,7 @@ RSpec.shared_examples 'a time machine' do
         time_machine.run(example_procsy)
       end
 
-      it 'runs the example in frozen example time when :freeze specified' do
+      it "runs the example in frozen example time when :freeze specified" do
         travel_time = Time.new(2016, 12, 15, 3, 2, 1)
         example_procsy.metadata[:freeze] = travel_time
 

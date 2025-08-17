@@ -22,9 +22,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require_relative 'example_decorator'
-require_relative 'traveler'
-require_relative 'travel_log'
+require_relative "example_decorator"
+require_relative "traveler"
+require_relative "travel_log"
 
 class Timecop
   module Rspec

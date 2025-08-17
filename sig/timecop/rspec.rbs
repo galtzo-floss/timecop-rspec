@@ -1,0 +1,40 @@
+class Timecop
+  module Rspec
+    module Version
+    end
+
+    class TimeMachine
+      def self.instance: () -> TimeMachine
+      def run: (untyped example) -> untyped
+    end
+
+    class SequentialTimeMachine
+      def self.instance: () -> SequentialTimeMachine
+      def run: (untyped example) -> untyped
+    end
+
+    class ExampleDecorator < ::SimpleDelegator
+      def timecop?: () -> bool
+      def timecop_method: () -> (:freeze | :travel)?
+      def timecop_time: () -> untyped
+      def local_timecop?: () -> bool
+      def global_timecop?: () -> bool
+      def skip_global_timecop?: () -> bool
+    end
+
+    class Traveler
+      def initialize: (ExampleDecorator example, TravelLog travel_log) -> void
+      def run: () -> untyped
+    end
+
+    class TravelLog
+      def initialize: (*untyped) -> void
+      def resume_or_new_trip: ((:travel | :freeze) travel_method, untyped start_time) -> untyped
+      def pause_trip: () -> void
+    end
+
+    def self.time_machine: (*untyped) -> (SequentialTimeMachine | TimeMachine)
+    def self.global_time_configured?: () -> bool
+    def self.global_time: () -> ::Time
+  end
+end

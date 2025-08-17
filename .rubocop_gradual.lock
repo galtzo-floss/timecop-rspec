@@ -1,21 +1,17 @@
 {
-  "README.md:2605929045": [
-    [131, 27, 1, "Lint/Syntax: unexpected token tIDENTIFIER\n(Using Ruby 2.0 parser; configure using `TargetRubyVersion` parameter, under `AllCops`)", 177617],
-    [131, 40, 1, "Lint/Syntax: unterminated string meets end of file\n(Using Ruby 2.0 parser; configure using `TargetRubyVersion` parameter, under `AllCops`)", 177538]
-  ],
   "Rakefile:3032348082": [
     [67, 5, 15, "Rake/Desc: Describe the task with `desc` method.", 842824456]
   ],
-  "lib/timecop/rspec.rb:2572120167": [
-    [46, 9, 12, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 990613604]
+  "lib/timecop/rspec.rb:919485649": [
+    [66, 9, 12, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 990613604]
   ],
-  "lib/timecop/rspec/sequential_time_machine.rb:1123164828": [
-    [32, 7, 53, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 496991953],
-    [33, 9, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 356709996]
+  "lib/timecop/rspec/sequential_time_machine.rb:757109961": [
+    [39, 7, 53, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 496991953],
+    [40, 9, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 356709996]
   ],
-  "lib/timecop/rspec/time_machine.rb:1380284046": [
-    [32, 7, 53, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 496991953],
-    [33, 9, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 356709996]
+  "lib/timecop/rspec/time_machine.rb:2818630369": [
+    [35, 7, 53, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 496991953],
+    [36, 9, 9, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 356709996]
   ],
   "spec/timecop/rspec/a_time_machine.rb:1115759165": [
     [47, 13, 29, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 2090924979],

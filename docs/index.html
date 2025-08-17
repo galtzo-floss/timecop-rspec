@@ -263,7 +263,7 @@ NOTE: Be prepared to track down certs for signed gems and add them the same way 
 
 <pre class="code language-ruby"><code class="language-ruby"># spec_helper.rb or some configuration file loaded by spec_helper.rb
 
-require &#39;timecop/rspec&#39;
+require &quot;timecop/rspec&quot;
 
 RSpec.configure do |config|
   config.around(:example) do |example|
@@ -279,11 +279,11 @@ RSpec metadata, or the global travel time.</p>
 
 <pre class="code language-ruby"><code class="language-ruby"># spec_helper.rb or some configuration file loaded by spec_helper.rb
 
-require &#39;timecop/rspec&#39;
+require &quot;timecop/rspec&quot;
 
 RSpec.configure do |config|
   config.around(:example) do |example|
-    Timecop::Rspec.time_machine(sequential: true).run(example)
+    Timecop::Rspec.time_machine(:sequential =&gt; true).run(example)
   end
 end
 </code></pre>
@@ -295,12 +295,12 @@ except that it will sometimes resume time travel.</p>
 example ended. E.g.</p>
 <pre class="code language-ruby"><code class="language-ruby"># GLOBAL_TIME_TRAVEL_TIME=2014-11-15 bundle exec rspec some_spec.rb
 
-it &#39;example 1&#39; do
+it &quot;example 1&quot; do
   Time.now # =&gt; 2014-11-15 00:00:00
   sleep 6
 end
 
-it &#39;example 2&#39; do
+it &quot;example 2&quot; do
   Time.now # =&gt; 2014-11-15 00:00:06 (resumed from end of previous example)
 end
 </code></pre>
@@ -308,17 +308,17 @@ end
 <p>Following local travel will resume when specified time is the same as the<br>
 previous examples specified time. If the time is different, it will<br>
 start from the current examples specified time.</p>
-<pre class="code language-ruby"><code class="language-ruby">describe SomeUnit, travel: Time.new(2014, 11, 15) do
-  it &#39;example 1&#39; do
+<pre class="code language-ruby"><code class="language-ruby">describe SomeUnit, :travel =&gt; Time.new(2014, 11, 15) do
+  it &quot;example 1&quot; do
     Time.now # =&gt; 2014-11-15 00:00:00
     sleep 6
   end
 
-  it &#39;example 2&#39; do
+  it &quot;example 2&quot; do
     Time.now # =&gt; 2014-11-15 00:00:06 (resumed from end of previous example)
   end
 
-  it &#39;example 3&#39;, travel: Time.new(1982, 6, 16) do
+  it &quot;example 3&quot;, :travel =&gt; Time.new(1982, 6, 16) do
     Time.now # =&gt; 1982-06-16 00:00:00
   end
 end
@@ -332,14 +332,14 @@ end
 <code>:travel</code> or <code>:freeze</code> metadata.</p>
 
 <pre class="code language-ruby"><code class="language-ruby"># Timecop.travel
-it &#39;some description&#39;, travel: Time.new(2014, 11, 15) do
+it &quot;some description&quot;, :travel =&gt; Time.new(2014, 11, 15) do
   Time.now # 2014-11-15 00:00:00
   sleep 6
   Time.now # 2014-11-15 00:00:06 (6 seconds later)
 end
 
 # Timecop.freeze
-it &#39;some description&#39;, freeze: Time.new(2014, 11, 15) do
+it &quot;some description&quot;, :freeze =&gt; Time.new(2014, 11, 15) do
   Time.now # 2014-11-15 00:00:00
   sleep 6
   Time.now # 2014-11-15 00:00:00 (Ruby&#39;s time hasn&#39;t advanced)
@@ -486,9 +486,8 @@ See <a href="file.LICENSE.html" title="LICENSE.txt">LICENSE.txt</a> for the offi
               <img src="https://logos.galtzo.com/assets/images/galtzo-floss/avatar-128px-blank.svg" alt="Galtzo.com Logo (Wordless) by Aboling0, CC BY-SA 4.0" width="24">
             </picture>
         </a>, and timecop-rspec contributors.
-        Three files, and marked in the header of each, have been graciously stolen from the rubocop gem. Two lightly, and one heavily, edited for purpose. RuboCop is under the same MIT license, but those files are are Copyright (c) 2012-23 Bozhidar Batsov. *1
     </li>
-    <li>*1) If they were extracted into a general purpose `config_finder`, I'd use that instead, and I may do that at some point.</li>
+    <li>Copyright (c) 2014-2017 Zach Taylor &amp; Avant</li>
 </ul>
 
 <p>P.S. If you need help️ or want to say thanks, 👇 Join the Discord.</p>
@@ -498,7 +497,7 @@ See <a href="file.LICENSE.html" title="LICENSE.txt">LICENSE.txt</a> for the offi
 </div></div>
 
       <div id="footer">
-  Generated on Sun Aug 17 13:17:52 2025 by
+  Generated on Sun Aug 17 13:21:00 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

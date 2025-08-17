@@ -66,7 +66,7 @@
     [59, 33, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
     [64, 33, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950]
   ],
-  "timecop-rspec.gemspec:569228637": [
+  "timecop-rspec.gemspec:2553891750": [
     [108, 3, 3, "Gemspec/DuplicatedAssignment: `files=` method calls already given on line 62 of the gemspec.", 193433027],
     [108, 16, 19, "Packaging/GemspecGit: Avoid using git to produce lists of files. Downstreams often need to build your package in an environment that does not have git (on purpose). Use some pure Ruby alternative, like `Dir` or `Dir.glob`.", 3879951891],
     [111, 3, 19, "Gemspec/DuplicatedAssignment: `bindir=` method calls already given on line 104 of the gemspec.", 554494033],

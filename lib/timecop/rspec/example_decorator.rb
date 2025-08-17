@@ -1,3 +1,6 @@
+# std lib
+require "delegate"
+
 class Timecop
   module Rspec
     # Decorates an RSpec example to interpret timecop metadata.

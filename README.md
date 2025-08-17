@@ -409,9 +409,9 @@ P.S. If you need help️ or want to say thanks, 👇 Join the Discord.
 
 [✇bundle-group-pattern]: https://gist.github.com/pboling/4564780
 [⛳️gem-namespace]: https://github.com/galtzo-floss/timecop-rspec
-[⛳️namespace-img]: https://img.shields.io/badge/namespace-FlossFunding-brightgreen.svg?style=flat&logo=ruby&logoColor=white
+[⛳️namespace-img]: https://img.shields.io/badge/namespace-Timecop%3A%3ARspec-brightgreen.svg?style=flat&logo=ruby&logoColor=white
 [⛳️gem-name]: https://rubygems.org/gems/timecop-rspec
-[⛳️name-img]: https://img.shields.io/badge/name-floss__funding-brightgreen.svg?style=flat&logo=rubygems&logoColor=red
+[⛳️name-img]: https://img.shields.io/badge/name-timecop-rspec-brightgreen.svg?style=flat&logo=rubygems&logoColor=red
 [🚂maint-blog]: http://www.railsbling.com/tags/timecop-rspec
 [🚂maint-blog-img]: https://img.shields.io/badge/blog-railsbling-0093D0.svg?style=for-the-badge&logo=rubyonrails&logoColor=orange
 [🚂maint-contact]: http://www.railsbling.com/contact
@@ -466,7 +466,7 @@ P.S. If you need help️ or want to say thanks, 👇 Join the Discord.
 [🔑qlty-cov]: https://qlty.sh/gh/galtzo-floss/projects/timecop-rspec/metrics/code?sort=coverageRating
 [🔑qlty-covi]: https://qlty.sh/gh/galtzo-floss/projects/timecop-rspec/coverage.svg
 [🔑codecov]: https://codecov.io/gh/galtzo-floss/timecop-rspec
-[🔑codecovi♻️]: https://codecov.io/gh/galtzo-floss/timecop-rspec/graph/badge.svg?token=hRnUCPqxMu
+[🔑codecovi♻️]: https://codecov.io/gh/galtzo-floss/timecop-rspec/graph/badge.svg?token=6XnuK8rocd
 [🔑coveralls]: https://coveralls.io/github/galtzo-floss/timecop-rspec?branch=main
 [🔑coveralls-img]: https://coveralls.io/repos/github/galtzo-floss/timecop-rspec/badge.svg?branch=main
 [🖐codeQL]: https://github.com/galtzo-floss/timecop-rspec/security/code-scanning
@@ -531,7 +531,7 @@ P.S. If you need help️ or want to say thanks, 👇 Join the Discord.
 [🤝cb-pulls]: https://codeberg.org/galtzo-floss/timecop-rspec/pulls
 [🤝cb-donate]: https://donate.codeberg.org/
 [🤝contributing]: CONTRIBUTING.md
-[🔑codecov-g♻️]: https://codecov.io/gh/galtzo-floss/timecop-rspec/graphs/tree.svg?token=hRnUCPqxMu
+[🔑codecov-g♻️]: https://codecov.io/gh/galtzo-floss/timecop-rspec/graphs/tree.svg?token=6XnuK8rocd
 [🖐contrib-rocks]: https://contrib.rocks
 [🖐contributors]: https://github.com/galtzo-floss/timecop-rspec/graphs/contributors
 [🖐contributors-img]: https://contrib.rocks/image?repo=galtzo-floss/timecop-rspec

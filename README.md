@@ -406,7 +406,7 @@ P.S. If you need help️ or want to say thanks, 👇 Join the Discord.
 [🖇paypal-img]: https://img.shields.io/badge/donate-paypal-a51611.svg?style=flat&logo=paypal
 [🖇paypal]: https://www.paypal.com/paypalme/peterboling
 [🖇floss-funding.dev]: https://floss-funding.dev
-[🖇floss-funding-gem]: https://github.com/galtzo-floss/floss-funding
+[🖇floss-funding-gem]: https://github.com/galtzo-floss/floss_funding
 [✉️discord-invite]: https://discord.gg/3qme4XHNKN
 [✉️discord-invite-img]: https://img.shields.io/discord/1373797679469170758?style=for-the-badge
 

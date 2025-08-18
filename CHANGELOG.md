@@ -12,12 +12,25 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 ### Fixed
 ### Security
 
+## [1.0.2] - 2025-08-18
+- TAG: [v1.0.2][1.0.2t]
+- COVERAGE: 100.00% -- 132/132 lines in 7 files
+- BRANCH COVERAGE: 92.31% -- 24/26 branches in 7 files
+- 100% documented
+### Added
+- improved CI
+### Changed
+- upgraded to Galtzo FLOSS Rakefile v1.0.9
+### Fixed
+- documentation, changelog
+- fix ancient bin/console script
+
 ## [1.0.1] - 2025-08-17
 - TAG: [v1.0.1][1.0.1t]
 - COVERAGE: 100.00% -- 132/132 lines in 7 files
 - BRANCH COVERAGE:  92.31% -- 24/26 branches in 7 files
 - 100% documented
-### Changed
+### Removed
 - refactored to remove dependency on activesupport
 
 ## [1.0.0] - 2025-08-17

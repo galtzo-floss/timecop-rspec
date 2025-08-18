@@ -148,7 +148,7 @@ NOTE: Be prepared to track down certs for signed gems and add them the same way 
 
 ## ⚙️ Configuration
 
-#### Regular Time Machine
+### Regular Time Machine
 
 ```ruby
 # spec_helper.rb or some configuration file loaded by spec_helper.rb
@@ -165,7 +165,7 @@ end
 The regular time machine will run each example at the time specified by the
 RSpec metadata, or the global travel time.
 
-#### Sequential Time Machine
+### Sequential Time Machine
 
 ```ruby
 # spec_helper.rb or some configuration file loaded by spec_helper.rb
@@ -219,7 +219,7 @@ end
 
 ## 🔧 Basic Usage
 
-#### Local Time Travel
+### Local Time Travel
 
 Timecop.travel/freeze any RSpec (describe|context|example) with
 `:travel` or `:freeze` metadata.
@@ -240,7 +240,7 @@ it "some description", :freeze => Time.new(2014, 11, 15) do
 end
 ```
 
-#### Global Time Travel
+### Global Time Travel
 
 Using global time travel will Timecop.travel any example that isn't
 already time traveling. I.e. example level timecop metadata will take
@@ -314,7 +314,8 @@ Made with [contributors-img][🖐contrib-rocks].
 
 Also see GitLab Contributors: [https://gitlab.com/galtzo-floss/timecop-rspec/-/graphs/main][🚎contributors-gl]
 
-## ⭐️ Star History
+<details>
+    <summary>⭐️ Star History</summary>
 
 <a href="https://star-history.com/#galtzo-floss/timecop-rspec&Date">
  <picture>
@@ -323,6 +324,8 @@ Also see GitLab Contributors: [https://gitlab.com/galtzo-floss/timecop-rspec/-/g
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=galtzo-floss/timecop-rspec&type=Date" />
  </picture>
 </a>
+
+</details>
 
 ## 📌 Versioning
 
@@ -403,7 +406,7 @@ P.S. If you need help️ or want to say thanks, 👇 Join the Discord.
 [🖇paypal-img]: https://img.shields.io/badge/donate-paypal-a51611.svg?style=flat&logo=paypal
 [🖇paypal]: https://www.paypal.com/paypalme/peterboling
 [🖇floss-funding.dev]: https://floss-funding.dev
-[🖇floss-funding-gem]: https://github.com/galtzo-floss/timecop-rspec
+[🖇floss-funding-gem]: https://github.com/galtzo-floss/floss-funding
 [✉️discord-invite]: https://discord.gg/3qme4XHNKN
 [✉️discord-invite-img]: https://img.shields.io/discord/1373797679469170758?style=for-the-badge
 

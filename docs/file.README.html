@@ -283,7 +283,7 @@ NOTE: Be prepared to track down certs for signed gems and add them the same way 
 
 <h2 id="️-configuration">⚙️ Configuration</h2>
 
-<h4 id="regular-time-machine">Regular Time Machine</h4>
+<h3 id="regular-time-machine">Regular Time Machine</h3>
 
 <pre class="code language-ruby"><code class="language-ruby"># spec_helper.rb or some configuration file loaded by spec_helper.rb
 
@@ -299,7 +299,7 @@ end
 <p>The regular time machine will run each example at the time specified by the<br>
 RSpec metadata, or the global travel time.</p>
 
-<h4 id="sequential-time-machine">Sequential Time Machine</h4>
+<h3 id="sequential-time-machine">Sequential Time Machine</h3>
 
 <pre class="code language-ruby"><code class="language-ruby"># spec_helper.rb or some configuration file loaded by spec_helper.rb
 
@@ -350,7 +350,7 @@ end
 
 <h2 id="-basic-usage">🔧 Basic Usage</h2>
 
-<h4 id="local-time-travel">Local Time Travel</h4>
+<h3 id="local-time-travel">Local Time Travel</h3>
 
 <p>Timecop.travel/freeze any RSpec (describe|context|example) with<br>
 <code>:travel</code> or <code>:freeze</code> metadata.</p>
@@ -370,7 +370,7 @@ it &quot;some description&quot;, :freeze =&gt; Time.new(2014, 11, 15) do
 end
 </code></pre>
 
-<h4 id="global-time-travel">Global Time Travel</h4>
+<h3 id="global-time-travel">Global Time Travel</h3>
 
 <p>Using global time travel will Timecop.travel any example that isn’t<br>
 already time traveling. I.e. example level timecop metadata will take<br>
@@ -399,7 +399,7 @@ end
 
 <p>If you work at a company that uses my work, please encourage them to support me as a corporate sponsor. My work on gems you use might show up in <code>bundle fund</code>.</p>
 
-<p>I’m developing a new library, <a href="https://github.com/galtzo-floss/timecop-rspec">floss_funding</a>, designed to empower open-source developers like myself to get paid for the work we do, in a sustainable way. Please give it a look.</p>
+<p>I’m developing a new library, <a href="https://github.com/galtzo-floss/floss_funding">floss_funding</a>, designed to empower open-source developers like myself to get paid for the work we do, in a sustainable way. Please give it a look.</p>
 
 <p><strong><a href="https://floss-funding.dev">Floss-Funding.dev</a>: 👉️ No network calls. 👉️ No tracking. 👉️ No oversight. 👉️ Minimal crypto hashing. 💡 Easily disabled nags</strong></p>
 
@@ -444,15 +444,18 @@ chat rooms and mailing lists agrees to follow the <a href="file.CODE_OF_CONDUCT.
 
 <p>Also see GitLab Contributors: <a href="https://gitlab.com/galtzo-floss/timecop-rspec/-/graphs/main">https://gitlab.com/galtzo-floss/timecop-rspec/-/graphs/main</a></p>
 
-<h2 id="️-star-history">⭐️ Star History</h2>
+<details>
+    <summary>⭐️ Star History</summary>
 
-<p><a href="https://star-history.com/#galtzo-floss/timecop-rspec&amp;Date"></a></p>
-<picture>
+<a href="https://star-history.com/#galtzo-floss/timecop-rspec&amp;Date">
+ <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=galtzo-floss/timecop-rspec&amp;type=Date&amp;theme=dark"></source>
    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=galtzo-floss/timecop-rspec&amp;type=Date"></source>
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=galtzo-floss/timecop-rspec&amp;type=Date">
  </picture>
-<p>&lt;/a&gt;</p>
+</a>
+
+</details>
 
 <h2 id="-versioning">📌 Versioning</h2>
 
@@ -518,10 +521,21 @@ See <a href="file.LICENSE.html" title="LICENSE.txt">LICENSE.txt</a> for the offi
 
 <p><a href="https://discord.gg/3qme4XHNKN"><img src="https://img.shields.io/discord/1373797679469170758?style=for-the-badge" alt="Live Chat on Discord"></a></p>
 
+<p>P.P.S. Maintainers have teeth, and need to pay their dentists.<br>
+After getting laid off in an RIF in March, and filled with many dozens of rejections,<br>
+I’m now spending ~80 hours a week building open source tools.<br>
+I’m hoping to be able to pay for my kids’ health insurance this month,<br>
+so if you value the work I am doing, please help.<br>
+I need your support. Consider sponsoring me.</p>
+
+<p><a href="https://github.com/sponsors/pboling"><img src="https://img.shields.io/badge/Sponsor_Me!-pboling-blue?style=for-the-badge&amp;logo=github" alt="Sponsor me on GitHub Sponsors"></a> 💌 <a href="https://img.shields.io/liberapay/goal/pboling.svg?logo=liberapay&amp;color=a51611"><img src="https://img.shields.io/liberapay/goal/pboling.svg?style=for-the-badge&amp;logo=liberapay&amp;color=a51611" alt="Sponsor me on Liberapay"></a> 💌 <a href="https://img.shields.io/badge/donate-paypal-a51611.svg?style=flat&amp;logo=paypal"><img src="https://img.shields.io/badge/donate-paypal-a51611.svg?style=for-the-badge&amp;logo=paypal&amp;color=0A0A0A" alt="Donate on PayPal"></a></p>
+
+<p>Thank you ☺️</p>
+
 </div></div>
 
       <div id="footer">
-  Generated on Mon Aug 18 04:22:10 2025 by
+  Generated on Mon Aug 18 05:34:16 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

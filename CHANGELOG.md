@@ -41,7 +41,9 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 ### Added
 - Initial release to rubygems (8 years late!)
 
-[Unreleased]: https://gitlab.com/galtzo-floss/timecop-rspec/-/compare/v1.0.1...main
+[Unreleased]: https://gitlab.com/galtzo-floss/timecop-rspec/-/compare/v1.0.2...main
+[1.0.2]: https://gitlab.com/galtzo-floss/timecop-rspec/-/compare/v1.0.2...v1.0.2
+[1.0.2t]: https://gitlab.com/galtzo-floss/timecop-rspec/-/tags/v1.0.2
 [1.0.1]: https://gitlab.com/galtzo-floss/timecop-rspec/-/compare/v1.0.0...v1.0.1
 [1.0.1t]: https://gitlab.com/galtzo-floss/timecop-rspec/-/tags/v1.0.1
 [1.0.0]: https://gitlab.com/galtzo-floss/timecop-rspec/-/compare/13c672f32c466824277d04c932e3244deb6451ea...v1.0.0

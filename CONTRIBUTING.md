@@ -28,9 +28,7 @@ From time to time the Appraisal2 gemfiles in `gemfiles/` will need to be updated
 They are created and updated with the commands:
 
 ```console
-BUNDLE_GEMFILE=Appraisal.root.gemfile bundle
-BUNDLE_GEMFILE=Appraisal.root.gemfile bundle exec appraisal update
-bundle exec rake rubocop_gradual:autocorrect
+bin/rake appraisal:update
 ```
 
 When adding an appraisal to CI check the [runner tool cache][🏃‍♂️runner-tool-cache] to see which runner to use.

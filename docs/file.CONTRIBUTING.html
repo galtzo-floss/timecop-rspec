@@ -88,9 +88,7 @@ the <a href="https://gitlab.com/galtzo-floss/timecop-rspec/-/blob/main/CODE_OF_C
 <p>From time to time the Appraisal2 gemfiles in <code>gemfiles/</code> will need to be updated.<br>
 They are created and updated with the commands:</p>
 
-<pre class="code language-console"><code class="language-console">BUNDLE_GEMFILE=Appraisal.root.gemfile bundle
-BUNDLE_GEMFILE=Appraisal.root.gemfile bundle exec appraisal update
-bundle exec rake rubocop_gradual:autocorrect
+<pre class="code language-console"><code class="language-console">bin/rake appraisal:update
 </code></pre>
 
 <p>When adding an appraisal to CI check the <a href="https://github.com/ruby/ruby-builder/releases/tag/toolcache">runner tool cache</a> to see which runner to use.</p>
@@ -210,7 +208,7 @@ push git commits and tags, and push the <code>.gem</code> file to <a href="https
 </div></div>
 
       <div id="footer">
-  Generated on Mon Aug 18 05:34:17 2025 by
+  Generated on Mon Aug 18 05:40:23 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

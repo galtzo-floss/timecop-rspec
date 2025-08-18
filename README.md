@@ -386,6 +386,8 @@ See [LICENSE.txt][📄license] for the official [Copyright Notice][📄copyright
     <li>Copyright (c) 2014-2017 Zach Taylor & Avant</li>
 </ul>
 
+## 🤑 A request for help
+
 P.S. If you need help️ or want to say thanks, 👇 Join the Discord.
 
 [![Live Chat on Discord][✉️discord-invite-img]][✉️discord-invite]

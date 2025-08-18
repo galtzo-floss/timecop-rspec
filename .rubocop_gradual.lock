@@ -66,11 +66,11 @@
     [59, 33, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950],
     [64, 33, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `example_procsy` as a spy using `allow` or `instance_spy`.", 1384559950]
   ],
-  "timecop-rspec.gemspec:2553891750": [
-    [108, 3, 3, "Gemspec/DuplicatedAssignment: `files=` method calls already given on line 62 of the gemspec.", 193433027],
-    [108, 16, 19, "Packaging/GemspecGit: Avoid using git to produce lists of files. Downstreams often need to build your package in an environment that does not have git (on purpose). Use some pure Ruby alternative, like `Dir` or `Dir.glob`.", 3879951891],
-    [111, 3, 19, "Gemspec/DuplicatedAssignment: `bindir=` method calls already given on line 104 of the gemspec.", 554494033],
-    [112, 3, 70, "Gemspec/DuplicatedAssignment: `executables=` method calls already given on line 106 of the gemspec.", 18210340],
-    [113, 3, 28, "Gemspec/DuplicatedAssignment: `require_paths=` method calls already given on line 103 of the gemspec.", 1947597918]
+  "timecop-rspec.gemspec:2892863758": [
+    [111, 3, 3, "Gemspec/DuplicatedAssignment: `files=` method calls already given on line 65 of the gemspec.", 193433027],
+    [111, 16, 19, "Packaging/GemspecGit: Avoid using git to produce lists of files. Downstreams often need to build your package in an environment that does not have git (on purpose). Use some pure Ruby alternative, like `Dir` or `Dir.glob`.", 3879951891],
+    [114, 3, 19, "Gemspec/DuplicatedAssignment: `bindir=` method calls already given on line 107 of the gemspec.", 554494033],
+    [115, 3, 70, "Gemspec/DuplicatedAssignment: `executables=` method calls already given on line 109 of the gemspec.", 18210340],
+    [116, 3, 28, "Gemspec/DuplicatedAssignment: `require_paths=` method calls already given on line 106 of the gemspec.", 1947597918]
   ]
 }

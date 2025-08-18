@@ -25,9 +25,9 @@ Gem::Specification.new do |spec|
 
   spec.summary = "⌚️ Timecop time-machines for RSpec"
   spec.description = "⌚️ Timecop::Rspec provides Timecop time-machines for RSpec that allow you" \
-                     "to time-travel test examples, context/describes, and/or your entire test suite. " \
-                     "Find out how your code will behave... in the future! " \
-                     "Fund overlooked open source projects - bottom of stack, dev/test dependencies: floss-funding.dev"
+    "to time-travel test examples, context/describes, and/or your entire test suite. " \
+    "Find out how your code will behave... in the future! " \
+    "Fund overlooked open source projects - bottom of stack, dev/test dependencies: floss-funding.dev"
   spec.homepage = "https://github.com/galtzo-floss/timecop-rspec"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 1.9.2"

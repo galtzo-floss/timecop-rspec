@@ -390,9 +390,22 @@ P.S. If you need help️ or want to say thanks, 👇 Join the Discord.
 
 [![Live Chat on Discord][✉️discord-invite-img]][✉️discord-invite]
 
+P.P.S. Maintainers have teeth, and need to pay their dentists.
+After getting laid off in an RIF in March, and filled with many dozens of rejections,
+I'm now spending ~80 hours a week building open source tools.
+I'm hoping to be able to pay for my kids' health insurance this month,
+so if you value the work I am doing, please help.
+I need your support. Consider sponsoring me.
+
+ [![Sponsor me on GitHub Sponsors][🖇sponsor-bottom-img]][🖇sponsor] 💌 [![Sponsor me on Liberapay][⛳liberapay-bottom-img]][⛳liberapay-img] 💌 [![Donate on PayPal][🖇paypal-bottom-img]][🖇paypal-img]
+
+Thank you ☺️
+
 [⛳liberapay-img]: https://img.shields.io/liberapay/goal/pboling.svg?logo=liberapay&color=a51611
+[⛳liberapay-bottom-img]: https://img.shields.io/liberapay/goal/pboling.svg?style=for-the-badge&logo=liberapay&color=a51611
 [⛳liberapay]: https://liberapay.com/pboling/donate
 [🖇sponsor-img]: https://img.shields.io/badge/Sponsor_Me!-pboling.svg?style=social&logo=github
+[🖇sponsor-bottom-img]: https://img.shields.io/badge/Sponsor_Me!-pboling-blue?style=for-the-badge&logo=github
 [🖇sponsor]: https://github.com/sponsors/pboling
 [🖇polar-img]: https://img.shields.io/badge/polar-donate-a51611.svg
 [🖇polar]: https://polar.sh/pboling
@@ -404,6 +417,7 @@ P.S. If you need help️ or want to say thanks, 👇 Join the Discord.
 [🖇buyme-img]: https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20latte&emoji=&slug=pboling&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff
 [🖇buyme]: https://www.buymeacoffee.com/pboling
 [🖇paypal-img]: https://img.shields.io/badge/donate-paypal-a51611.svg?style=flat&logo=paypal
+[🖇paypal-bottom-img]: https://img.shields.io/badge/donate-paypal-a51611.svg?style=for-the-badge&logo=paypal&color=0A0A0A
 [🖇paypal]: https://www.paypal.com/paypalme/peterboling
 [🖇floss-funding.dev]: https://floss-funding.dev
 [🖇floss-funding-gem]: https://github.com/galtzo-floss/floss_funding

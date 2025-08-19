@@ -1,6 +1,6 @@
 {
-  "Rakefile:2175408800": [
-    [74, 5, 15, "Rake/Desc: Describe the task with `desc` method.", 842824456]
+  "Rakefile:3665486145": [
+    [75, 5, 15, "Rake/Desc: Describe the task with `desc` method.", 842824456]
   ],
   "lib/timecop/rspec.rb:1066485176": [
     [42, 9, 12, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 990613604]

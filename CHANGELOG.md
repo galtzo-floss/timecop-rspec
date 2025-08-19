@@ -6,10 +6,13 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 
 ## [Unreleased]
 ### Added
+- more documentation on how to support the project
 ### Changed
 ### Deprecated
 ### Removed
+- duplicate gemspec attributes
 ### Fixed
+- gemspec attributes
 ### Security
 
 ## [1.0.2] - 2025-08-18

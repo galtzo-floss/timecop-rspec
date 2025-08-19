@@ -108,13 +108,6 @@ Gem::Specification.new do |spec|
   # files listed are relative paths from bindir above.
   spec.executables = []
 
-  spec.files = %x(git ls-files -z).split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
-  spec.bindir = "exe"
-  spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
-
   spec.add_dependency("delegate", "~> 0.1")                             # ruby > 0, for SimpleDelegator, newer versions drop support for older rubies
   spec.add_dependency("rspec", "~> 3.0")                                # ruby > 0
   spec.add_dependency("timecop", ">= 0.7", "< 1")                       # ruby >= 1.9.2, for time-based testing

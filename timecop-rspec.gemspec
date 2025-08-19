@@ -116,8 +116,8 @@ Gem::Specification.new do |spec|
   #       visibility and discoverability on RubyGems.org.
   #       However, development dependencies in gemspec will install on
   #       all versions of Ruby that will run in CI.
-  #       This gem, and its runtime dependencies, will install on Ruby down to 1.9.2.
-  #       This gem, and its development dependencies, will install on Ruby down to 2.3.x.
+  #       This gem, and its gemspec runtime dependencies, will install on Ruby down to 1.9.2.
+  #       This gem, and its gemspec development dependencies, will install on Ruby down to 2.3.x.
   #       This is because in CI easy installation of Ruby, via setup-ruby, is for >= 2.3.
   #       Thus, dev dependencies in gemspec must have
   #

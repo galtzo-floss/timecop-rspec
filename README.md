@@ -11,7 +11,11 @@
 
 [![Version][👽versioni]][👽version] [![License: MIT][📄license-img]][📄license-ref] [![Downloads Rank][👽dl-ranki]][👽dl-rank] [![Open Source Helpers][👽oss-helpi]][👽oss-help] [![Coveralls Test Coverage][🔑coveralls-img]][🔑coveralls] [![CodeCov Test Coverage][🔑codecovi♻️]][🔑codecov] [![QLTY Test Coverage][🔑qlty-covi]][🔑qlty-cov] [![QLTY Maintainability][🔑qlty-mnti]][🔑qlty-mnt] [![CI Heads][🚎3-hd-wfi]][🚎3-hd-wf] [![CI Current][🚎11-c-wfi]][🚎11-c-wf] [![CI Truffle Ruby][🚎9-t-wfi]][🚎9-t-wf] [![CI JRuby][🚎10-j-wfi]][🚎10-j-wf] [![Deps Locked][🚎13-🔒️-wfi]][🚎13-🔒️-wf] [![Deps Unlocked][🚎14-🔓️-wfi]][🚎14-🔓️-wf] [![CI Supported][🚎6-s-wfi]][🚎6-s-wf] [![CI Legacy][🚎4-lg-wfi]][🚎4-lg-wf] [![CI Unsupported][🚎7-us-wfi]][🚎7-us-wf] [![CI Ancient][🚎1-an-wfi]][🚎1-an-wf] [![CI Test Coverage][🚎2-cov-wfi]][🚎2-cov-wf] [![CI Style][🚎5-st-wfi]][🚎5-st-wf]
 
+If ☝️ `badges.map(&:color).detect {|c| c != "green"}`  [let me know][🖼️galtzo-discord], as I may have missed the [discord notification][🖼️galtzo-discord].
+
 ---
+
+OTOH, if `badges.map(&:color).all? {|c| c == "green"}` 👇️ send money so I can do more of this. FLOSS is now my full-time job.
 
 [![Liberapay Goal Progress][⛳liberapay-img]][⛳liberapay] [![Sponsor Me on Github][🖇sponsor-img]][🖇sponsor] [![Buy me a coffee][🖇buyme-small-img]][🖇buyme] [![Donate on Polar][🖇polar-img]][🖇polar] [![Donate to my FLOSS or refugee efforts at ko-fi.com][🖇kofi-img]][🖇kofi] [![Donate to my FLOSS or refugee efforts using Patreon][🖇patreon-img]][🖇patreon]
 
@@ -20,8 +24,9 @@
 [Timecop::Rspec](https://github.com/avantoss/timecop-rspec) provides [Timecop](https://github.com/travisjeffery/timecop) time-machines for [RSpec](https://github.com/rspec/rspec) that allow you to time-travel test examples, context/describes, and/or your entire test suite.
 
 The gem was never released by its original author, who later moved on to work in other languages.
-[Zach Taylor](https://github.com/taylorzr) did a great job with it,
-and people have been [hoping it would be published](https://github.com/avantoss/timecop-rspec/issues/2).
+[Zach Taylor](https://github.com/taylorzr) and
+[Tim Mertens](https://github.com/tmertens)
+did a great job with it, and people have been [hoping it would be published](https://github.com/avantoss/timecop-rspec/issues/2).
 It has a great API, and I was about to build this exact thing myself, so I am glad I found this.
 I've modernized everything, added more tests and documentation, and released it.
 Thanks to the long-term stability of both RSpec and Timecop, the original code still works perfectly.
@@ -388,20 +393,22 @@ See [LICENSE.txt][📄license] for the official [Copyright Notice][📄copyright
 
 ## 🤑 A request for help
 
-P.S. If you need help️ or want to say thanks, 👇 Join the Discord.
-
-[![Live Chat on Discord][✉️discord-invite-img]][✉️discord-invite]
-
-P.P.S. Maintainers have teeth, and need to pay their dentists.
+Maintainers have teeth, and need to pay their dentists.
 After getting laid off in an RIF in March, and filled with many dozens of rejections,
 I'm now spending ~80 hours a week building open source tools.
 I'm hoping to be able to pay for my kids' health insurance this month,
 so if you value the work I am doing, please help.
-I need your support. Consider sponsoring me.
+I need your support. Please consider sponsoring me.
 
  [![Sponsor me on GitHub Sponsors][🖇sponsor-bottom-img]][🖇sponsor] 💌 [![Sponsor me on Liberapay][⛳liberapay-bottom-img]][⛳liberapay-img] 💌 [![Donate on PayPal][🖇paypal-bottom-img]][🖇paypal-img]
 
-Thank you ☺️
+To say "thanks for maintaining such a great tool" 👇️ Join the Discord or ☝️ send money.
+
+To join the community or get help 👇️ Join the Discord.
+
+[![Live Chat on Discord][✉️discord-invite-img]][✉️discord-invite]
+
+Thanks for RTFM. ☺️
 
 [⛳liberapay-img]: https://img.shields.io/liberapay/goal/pboling.svg?logo=liberapay&color=a51611
 [⛳liberapay-bottom-img]: https://img.shields.io/liberapay/goal/pboling.svg?style=for-the-badge&logo=liberapay&color=a51611

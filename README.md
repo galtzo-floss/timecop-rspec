@@ -519,8 +519,8 @@ Thanks for RTFM. ☺️
 [🚎10-j-wfi]: https://github.com/galtzo-floss/timecop-rspec/actions/workflows/jruby.yml/badge.svg
 [🚎11-c-wf]: https://github.com/galtzo-floss/timecop-rspec/actions/workflows/current.yml
 [🚎11-c-wfi]: https://github.com/galtzo-floss/timecop-rspec/actions/workflows/current.yml/badge.svg
-[🚎13-🔒️-wf]: https://github.com/galtzo-floss/timecop-rspec/actions/workflows/deps_locked.yml
-[🚎13-🔒️-wfi]: https://github.com/galtzo-floss/timecop-rspec/actions/workflows/deps_locked.yml/badge.svg
+[🚎13-🔒️-wf]: https://github.com/galtzo-floss/timecop-rspec/actions/workflows/locked_deps.yml
+[🚎13-🔒️-wfi]: https://github.com/galtzo-floss/timecop-rspec/actions/workflows/locked_deps.yml/badge.svg
 [🚎14-🔓️-wf]: https://github.com/galtzo-floss/timecop-rspec/actions/workflows/deps_unlocked.yml
 [🚎14-🔓️-wfi]: https://github.com/galtzo-floss/timecop-rspec/actions/workflows/deps_unlocked.yml/badge.svg
 [💎ruby-1.9i]: https://img.shields.io/badge/Ruby-1.9_(%F0%9F%9A%ABCI)-AABBCC?style=for-the-badge&logo=ruby&logoColor=white

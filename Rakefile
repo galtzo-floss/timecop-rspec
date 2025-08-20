@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Galtzo FLOSS Rakefile v1.0.10 - 2025-08-18
+# Galtzo FLOSS Rakefile v1.0.11 - 2025-08-19
 # Ruby 1.9 Compatible Edition
 #
 # CHANGELOG
@@ -15,6 +15,7 @@
 # v1.0.8 - improved Dir globs, add back and document rbconfig dependency
 # v1.0.9 - add appraisal:update task to update Appraisal gemfiles and autocorrect with RuboCop Gradual
 # v1.0.10 - add ci:act to run GHA workflows locally, and get status of remote workflows
+# v1.0.11 - ci:act workflows are populated entirely dynamically, based on existing files
 #
 # MIT License (see License.txt)
 #
@@ -72,7 +73,7 @@ begin
 rescue LoadError
   desc("(stub) floss_funding is unavailable")
   namespace(:floss_funding) do
-    task("install") do
+    task("install") do # rubocop:disable Rake/Desc
       warn("NOTE: floss_funding isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
     end
   end
@@ -329,7 +330,7 @@ task :bench => "bench:run"
 # --- CI helpers ---
 namespace :ci do
   # rubocop:disable ThreadSafety/NewThread
-  desc "Run 'act' with a selected workflow. Usage: rake ci:act[anc] or rake ci:act (then choose)"
+  desc "Run 'act' with a selected workflow. Usage: rake ci:act[loc] (short code = first 3 letters of filename, e.g., 'loc' => locked_deps.yml), rake ci:act[locked_deps], rake ci:act[locked_deps.yml], or rake ci:act (then choose)"
   task :act, [:opt] do |_t, args|
     require "io/console"
     require "open3"
@@ -337,28 +338,15 @@ namespace :ci do
     require "json"
     require "uri"
 
-    mapping = {
-      "anc" => "ancient.yml",
-      "cov" => "coverage.yml",
-      "cur" => "current.yml",
-      "loc" => "deps_locked.yml",
-      # The repo uses 'deps_unlocked.yml' for unlocked dependencies
-      "unl" => "deps_unlocked.yml",
-      "hed" => "heads.yml",
-      "jrb" => "jruby.yml",
-      "leg" => "legacy.yml",
-      "sty" => "style.yml",
-      "sup" => "supported.yml",
-      "tru" => "truffle.yml",
-      "uns" => "unsupported.yml",
-    }
+    # Build mapping dynamically from workflow files; short code = first three letters of filename.
+    # Collisions are resolved by first-come wins via ||= as requested.
+    mapping = {}
 
     # Normalize provided option. Accept either short code or the exact yml/yaml filename
     choice = args[:opt] ? args[:opt].strip : nil
     workflows_dir = File.join(File.dirname(__FILE__), ".github", "workflows")
 
-    # Determine actual workflow files present, filter mapping to existing,
-    # and prepare dynamic additions (no short codes) excluding specified files.
+    # Determine actual workflow files present, and prepare dynamic additions excluding specified files.
     existing_files = if Dir.exist?(workflows_dir)
       Dir[File.join(workflows_dir, "*.yml")] + Dir[File.join(workflows_dir, "*.yaml")]
     else
@@ -485,7 +473,7 @@ namespace :ci do
       # If user passed a filename directly (with or without extension), resolve it
       file = if mapping.key?(choice)
         mapping.fetch(choice)
-      elsif choice && choice =~ /\.(yml|yaml)\z/
+      elsif choice =~ /\.(yml|yaml)\z/
         # Accept either full basename (without ext) or basename with .yml/.yaml
         choice
       else

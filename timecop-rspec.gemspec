@@ -139,4 +139,6 @@ Gem::Specification.new do |spec|
 
   # Development tasks
   spec.add_development_dependency("rake", "~> 13.0")                          # ruby >= 2.2
+  spec.add_development_dependency("gitmoji-regex", "~> 1.0")                  # ruby >= 2.3.0
+  spec.add_development_dependency("erb", ">= 2.2")                            # ruby >= 2.3.0, not SemVer, old rubies get dropped in a patch.
 end

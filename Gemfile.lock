@@ -13,7 +13,7 @@ GIT
 PATH
   remote: .
   specs:
-    timecop-rspec (1.0.2)
+    timecop-rspec (1.0.3)
       delegate (~> 0.1)
       rspec (~> 3.0)
       timecop (>= 0.7, < 1)

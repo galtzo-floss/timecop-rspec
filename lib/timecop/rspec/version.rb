@@ -4,7 +4,7 @@ class Timecop
     module Version
       # The gem version.
       # @return [String]
-      VERSION = "1.0.2"
+      VERSION = "1.0.3"
     end
     # Convenience constant aliasing Version::VERSION
     # @return [String]

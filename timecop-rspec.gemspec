@@ -138,7 +138,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency("timecop", "~> 0.9", ">= 0.9.10")           # ruby >= 1.9.2, for time-based testing
 
   # Development tasks
-  spec.add_development_dependency("rake", "~> 13.0")                          # ruby >= 2.2
-  spec.add_development_dependency("gitmoji-regex", "~> 1.0")                  # ruby >= 2.3.0
   spec.add_development_dependency("erb", ">= 2.2")                            # ruby >= 2.3.0, not SemVer, old rubies get dropped in a patch.
+  spec.add_development_dependency("gitmoji-regex", "~> 1.0", ">= 1.0.3")      # ruby >= 2.3.0
+  spec.add_development_dependency("rake", "~> 13.0")                          # ruby >= 2.2
 end

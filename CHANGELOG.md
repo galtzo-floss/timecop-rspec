@@ -6,14 +6,28 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 
 ## [Unreleased]
 ### Added
-- more documentation on how to support the project
+- Tests: cover both branches of ExampleDecorator's global_timecop_method and global_timecop_time to ensure behavior when global time is configured vs. disabled, and when skipped via metadata.
 ### Changed
 ### Deprecated
 ### Removed
-- duplicate gemspec attributes
 ### Fixed
-- gemspec attributes
 ### Security
+
+## [1.0.3] - 2025-08-20
+- TAG: [v1.0.3][1.0.3t]
+- COVERAGE: 100.00% -- 132/132 lines in 7 files
+- BRANCH COVERAGE: 100.00% -- 26/26 branches in 7 files
+- 100% documented
+### Added
+- more documentation on how to support the project
+- (dev) enforce gitmoji commit messages (first char is Gitmoji)
+- (dev) support for appending a custom footer to commits via
+    - .git-hooks/prepare-commit-msg
+    - bin/prepare-commit-msg
+### Changed
+- (dev) Upgraded to Galtzo FLOSS Rakefile v1.0.11
+### Fixed
+- gemspec attributes (remove duplicates)
 
 ## [1.0.2] - 2025-08-18
 - TAG: [v1.0.2][1.0.2t]
@@ -44,8 +58,10 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 ### Added
 - Initial release to rubygems (8 years late!)
 
-[Unreleased]: https://gitlab.com/galtzo-floss/timecop-rspec/-/compare/v1.0.2...main
-[1.0.2]: https://gitlab.com/galtzo-floss/timecop-rspec/-/compare/v1.0.2...v1.0.2
+[Unreleased]: https://gitlab.com/galtzo-floss/timecop-rspec/-/compare/v1.0.3...main
+[1.0.3]: https://gitlab.com/galtzo-floss/timecop-rspec/-/compare/v1.0.2...v1.0.3
+[1.0.3t]: https://gitlab.com/galtzo-floss/timecop-rspec/-/tags/v1.0.3
+[1.0.2]: https://gitlab.com/galtzo-floss/timecop-rspec/-/compare/v1.0.1...v1.0.2
 [1.0.2t]: https://gitlab.com/galtzo-floss/timecop-rspec/-/tags/v1.0.2
 [1.0.1]: https://gitlab.com/galtzo-floss/timecop-rspec/-/compare/v1.0.0...v1.0.1
 [1.0.1t]: https://gitlab.com/galtzo-floss/timecop-rspec/-/tags/v1.0.1

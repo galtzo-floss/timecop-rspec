@@ -36,5 +36,3 @@ eval_gemfile "gemfiles/modular/style.gemfile"
 
 # Documentation
 eval_gemfile "gemfiles/modular/documentation.gemfile"
-
-gem "gitmoji-regex", path: "/home/pboling/src/galtzo-floss/gitmoji-regex"

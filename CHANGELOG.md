@@ -6,7 +6,6 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 
 ## [Unreleased]
 ### Added
-- Tests: cover both branches of ExampleDecorator's global_timecop_method and global_timecop_time to ensure behavior when global time is configured vs. disabled, and when skipped via metadata.
 ### Changed
 ### Deprecated
 ### Removed
@@ -19,6 +18,7 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 - BRANCH COVERAGE: 100.00% -- 26/26 branches in 7 files
 - 100% documented
 ### Added
+- Tests: cover both branches of ExampleDecorator's global_timecop_method and global_timecop_time to ensure behavior when global time is configured vs. disabled, and when skipped via metadata.
 - more documentation on how to support the project
 - (dev) enforce gitmoji commit messages (first char is Gitmoji)
 - (dev) support for appending a custom footer to commits via

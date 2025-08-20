@@ -6,9 +6,6 @@ ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../Gemfile", __dir__)
 require "rubygems"
 require "bundler/setup"
 
-# Standard library
-require "erb"
-
 # External gems
 require "gitmoji/regex"
 

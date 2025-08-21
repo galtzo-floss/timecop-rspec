@@ -83,7 +83,7 @@ class GitCommitFooter
           # This is a commit message that has already been appended
           # This will happen if the commit message is edited and re-committed
           # puts "FOOTER_APPEND is true, skipping footer append"
-          exit 0
+          exit(0)
         else
           footer_binding = GitCommitFooter.new(argv[0])
           # Append footer to the commit message

@@ -33,10 +33,10 @@ if (branch_rule = BRANCH_RULES[BRANCH_RULE_TYPE])
   if !match_data.nil?
     commit_msg = File.read(ARGV[0])
     unless commit_msg.include?(match_data[:story_id])
-      commit_msg = <<EOS
-#{commit_msg.strip}
-[#{match_data[:story_type]}][#{match_data[:story_id]}]
-EOS
+      commit_msg = <<~EOS
+        #{commit_msg.strip}
+        [#{match_data[:story_type]}][#{match_data[:story_id]}]
+      EOS
       File.open(ARGV[0], "w") do |file|
         file.print(commit_msg)
       end
@@ -75,7 +75,7 @@ class GitCommitFooter
       prefixes.any? { |prefix| subj.start_with?(prefix) }
     end
 
-    def render(argv)
+    def render(*argv)
       commit_msg = File.read(argv[0])
       subject_line = commit_msg.lines.first.to_s
       if GitCommitFooter::FOOTER_APPEND && goalie_allows_footer?(subject_line)
@@ -85,7 +85,7 @@ class GitCommitFooter
           # puts "FOOTER_APPEND is true, skipping footer append"
           exit(0)
         else
-          footer_binding = GitCommitFooter.new(argv[0])
+          footer_binding = GitCommitFooter.new
           # Append footer to the commit message
           File.open(argv[0], "w") do |file|
             file.print(commit_msg)
@@ -152,4 +152,4 @@ class GitCommitFooter
   end
 end
 
-GitCommitFooter.render(ARGV)
+GitCommitFooter.render(*ARGV)

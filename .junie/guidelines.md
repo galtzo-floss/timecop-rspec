@@ -86,27 +86,8 @@ This document captures project-specific knowledge to streamline setup, testing, 
       # example code continues
   - If your spec needs to assert on console output, tag it with :check_output. By default, STDOUT is silenced.
   - Use Timecop for deterministic time-sensitive behavior as needed (require config/timecop is already done by spec_helper).
-- Demonstrated example (executed and verified during this session)
-  - Example spec content used:
-    - File: spec/timecop-rspec/demo_spec.rb
-      RSpec.describe "Demo test for guidelines" do
-        it "has a non-empty version string" do
-          expect(FlossFunding::Version::VERSION).to be_a(String)
-          expect(FlossFunding::Version::VERSION).not_to be_empty
-        end
-      end
-  - Commands run:
-    - bundle exec rspec spec/timecop-rspec/demo_spec.rb — this ran but failed coverage thresholds (expected when running subsets with coverage on).
-    - bundle exec rspec — running the full suite including the demo spec passed; overall coverage: ~93.67% lines, ~74.07% branches.
-  - Cleanup: The demo spec file was removed after verification per instructions.
 
 3. Additional development information
-- Activation env vars and namespacing (important for tests and local runs)
-  - The library behavior is driven by namespace-based activation keys: ENV["FLOSS_FUNDING_<NAMESPACE>"].
-  - The FlossFunding::Namespace class derives env var names via FlossFunding::UnderBar.env_variable_name(name). Recognized activation forms include:
-    - Free-as-in-beer, Business-is-not-good-yet, or NOT-FINANCIALLY-SUPPORTING-<namespace> — treated as unpaid/opted-out and considered "activated" for silent success (no console warnings).
-    - A paid activation key is a 64-char hex string; it is decrypted with AES-256-CBC using a key derived from Digest::MD5.hexdigest(namespace).
-  - In tests, avoid noisy output and unrelated failures by either using the provided default (ENV seeded for this gem) or stubbing the relevant ENV vars for the namespaces you trigger.
 - Code style and static analysis
   - RuboCop-LTS (Gradual) is integrated. Use:
     - bundle exec rake rubocop_gradual:autocorrect
@@ -133,7 +114,6 @@ Quick start
 Notes
 - ALWAYS Run bundle exec rake rubocop_gradual:autocorrect as the final step before completing a task, to lint and autocorrect any remaining issues. Then if there are new lint failures, attempt to correct them manually.
 - NEVER run vanilla rubocop, as it won't handle the linting config properly. Always run rubocop_gradual:autocorrect or rubocop_gradual.
-- NEVER consider backwards compatibility when adding new features or refactoring existing code, as this library is in the design phase, and is still an alpha release.
 - Running only a subset of specs is supported but in order to bypass the hard failure due to coverage thresholds, you need to run with K_SOUP_COV_MIN_HARD=false.
 - When adding code that writes to STDOUT, remember most specs silence output unless tagged with :check_output or DEBUG=true.
 - For all the kettle-soup-cover options, see .envrc and find the K_SOUP_COV_* env vars.

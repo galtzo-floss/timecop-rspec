@@ -397,8 +397,8 @@ Maintainers have teeth, and need to pay their dentists.
 After getting laid off in an RIF in March, and filled with many dozens of rejections,
 I'm now spending ~80 hours a week building open source tools.
 I'm hoping to be able to pay for my kids' health insurance this month,
-so if you value the work I am doing, please help.
-I need your support. Please consider sponsoring me.
+so if you value the work I am doing, I need your support.
+Please consider sponsoring me.
 
  [![Sponsor me on GitHub Sponsors][🖇sponsor-bottom-img]][🖇sponsor] 💌 [![Sponsor me on Liberapay][⛳liberapay-bottom-img]][⛳liberapay-img] 💌 [![Donate on PayPal][🖇paypal-bottom-img]][🖇paypal-img]
 

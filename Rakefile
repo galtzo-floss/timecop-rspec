@@ -58,6 +58,102 @@ DEBUGGING = ENV.fetch("DEBUG", "false").casecmp("true").zero?
 
 # External gems
 require "bundler/gem_tasks" if !Dir[File.join(File.dirname(__FILE__), "*.gemspec")].empty?
+# Define a base default task early so other files can enhance it.
+desc "Default tasks aggregator"
+task :default do
+  puts "Default task complete."
+end
+
+# simplecov:disable
+### MONOREPO FAMILY TASKS
+if Dir.exist?(File.join(__dir__, "gems"))
+  def family_gem_dirs
+    Dir.glob(File.join(__dir__, "gems", "*", "*.gemspec"))
+      .map { |path| File.dirname(path) }
+      .uniq
+      .sort_by { |path| File.basename(path) }
+  end
+
+  def run_kettle_family(*args)
+    sh("bundle", "exec", "kettle-family", *args)
+  end
+
+  namespace :family do
+    desc "List released Ruby subgems"
+    task :list do
+      family_gem_dirs.each { |path| puts File.basename(path) }
+    end
+
+    desc "Run release readiness checks for the Ruby gem family"
+    task :readiness do
+      run_kettle_family("check")
+    end
+
+    desc "Run tests for the Ruby gem family"
+    task :test do
+      run_kettle_family("test", "--execute")
+    end
+
+    desc "Run lint for the Ruby gem family"
+    task :lint do
+      run_kettle_family("lint", "--execute")
+    end
+
+    desc "Generate YARD docs for the Ruby gem family"
+    task :docs do
+      run_kettle_family("docs", "--execute")
+    end
+
+    desc "Report release state for the Ruby gem family"
+    task :release_state do
+      run_kettle_family("release-state")
+    end
+
+    desc "Run the Ruby gem family release planner"
+    task :release do
+      run_kettle_family("release")
+    end
+
+    desc "Execute the Ruby gem family release"
+    task :release_execute do
+      run_kettle_family("release", "--execute")
+    end
+  end
+end
+# simplecov:enable
+
+# External gems that define tasks - add here!
+begin
+  require "kettle/dev"
+  Kettle::Dev.install_tasks unless Kettle::Dev::RUNNING_AS == "rake"
+rescue LoadError
+  warn("NOTE: kettle-dev isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+end
+
+### TEMPLATING TASKS
+# These tasks are installed for the `kettle-jem` executable. Run full templating
+# through `kettle-jem install`; use `kettle-jem template --only PATH` only for
+# scoped file updates. The executable prepares the environment and then
+# delegates here when rake orchestration is needed.
+kettle_jem_selftest_unavailable_note = nil
+begin
+  require "kettle/jem"
+  if Kettle::Jem.respond_to?(:install_tasks)
+    Kettle::Jem.install_tasks
+  else
+    kettle_jem_selftest_unavailable_note = "NOTE: kettle-jem #{Kettle::Jem::Version::VERSION} does not provide rake tasks in this environment"
+  end
+rescue LoadError
+  kettle_jem_selftest_unavailable_note = "NOTE: kettle-jem isn't installed, or is disabled for #{RUBY_VERSION} in the current environment"
+end
+
+if kettle_jem_selftest_unavailable_note
+  desc("(stub) kettle:jem:selftest is unavailable")
+  task("kettle:jem:selftest") do
+    warn(kettle_jem_selftest_unavailable_note)
+  end
+end
+
 require "rbconfig" if !Dir[File.join(File.dirname(__FILE__), "benchmarks")].empty? # Used by `rake bench:run`
 require "debug" if DEBUGGING
 
@@ -150,6 +246,8 @@ else
   # Add spec as pre-requisite to 'test'
   Rake::Task[:test].enhance(["spec"])
 end
+# rubocop:enable Rake/DuplicateTask
+
 # rubocop:enable Rake/DuplicateTask
 
 # Setup RuboCop-LTS

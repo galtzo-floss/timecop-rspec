@@ -38,3 +38,12 @@ class Timecop
     def self.global_time: () -> ::Time
   end
 end
+
+module Timecop
+  module Rspec
+    module Version
+      VERSION: String
+    end
+    VERSION: String
+  end
+end

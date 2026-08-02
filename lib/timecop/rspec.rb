@@ -1,4 +1,4 @@
-require "timecop/rspec/version"
+require_relative "rspec/version"
 
 Dir.glob(File.join(__dir__, "rspec", "**", "*.rb")).each { |file| require file }
 

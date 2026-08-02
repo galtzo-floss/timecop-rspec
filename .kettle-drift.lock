@@ -1,0 +1,75 @@
+{
+  "- 100% documented\n### Added": [
+    {
+      "file": "CHANGELOG.md",
+      "lines": [
+        101,
+        118,
+        139
+      ]
+    }
+  ],
+  "- BRANCH COVERAGE:  92.31% -- 24/26 branches in 7 files\n- 100% documented": [
+    {
+      "file": "CHANGELOG.md",
+      "lines": [
+        130,
+        138
+      ]
+    }
+  ],
+  "// Use 'forwardPorts' to make a list of ports inside the container available locally.\n// \"forwardPorts\": [],": [
+    {
+      "file": ".devcontainer/devcontainer.json",
+      "lines": [
+        11,
+        22
+      ]
+    }
+  ],
+  "arr = data[\"workflow_runs\"]\nrun = arr && arr.first": [
+    {
+      "file": "Rakefile",
+      "lines": [
+        426,
+        453
+      ]
+    }
+  ],
+  "bench_files = Dir[File.join(File.dirname(__FILE__), \"benchmarks\", \"*.rb\")].sort\nif bench_files.empty?": [
+    {
+      "file": "Rakefile",
+      "lines": [
+        281,
+        298
+      ]
+    }
+  ],
+  "data = JSON.parse(res.body)\narr = data[\"workflow_runs\"]": [
+    {
+      "file": "Rakefile",
+      "lines": [
+        425,
+        452
+      ]
+    }
+  ],
+  "if bench_files.empty?\nputs \"No benchmark scripts found under benchmarks/.\"": [
+    {
+      "file": "Rakefile",
+      "lines": [
+        282,
+        299
+      ]
+    }
+  ],
+  "req = Net::HTTP::Get.new(uri)\nreq[\"User-Agent\"] = \"ci:act rake task\"": [
+    {
+      "file": "Rakefile",
+      "lines": [
+        417,
+        572
+      ]
+    }
+  ]
+}

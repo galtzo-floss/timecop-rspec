@@ -8,8 +8,8 @@ RSpec.describe Timecop::Rspec::ExampleDecorator do
   let(:example_procsy) do
     instance_double(
       RSpec::Core::Example::Procsy,
-      :example => some_example,
-      :metadata => metadata,
+      example: some_example,
+      metadata: metadata
     )
   end
 

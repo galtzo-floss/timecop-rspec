@@ -9,8 +9,8 @@ RSpec.describe Timecop::Rspec::SequentialTimeMachine do
   let(:example_procsy) do
     instance_double(
       RSpec::Core::Example::Procsy,
-      :example => some_example,
-      :metadata => {},
+      example: some_example,
+      metadata: {}
     )
   end
 

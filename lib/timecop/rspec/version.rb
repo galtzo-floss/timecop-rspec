@@ -1,13 +1,13 @@
+# frozen_string_literal: true
+
 class Timecop
   module Rspec
-    # Version namespace for Timecop::Rspec.
+    # Version namespace for this gem.
     module Version
-      # The gem version.
-      # @return [String]
+      # Current gem version.
       VERSION = "1.0.3"
     end
-    # Convenience constant aliasing Version::VERSION
-    # @return [String]
-    VERSION = Version::VERSION
+    # Current gem version exposed at the traditional constant location.
+    VERSION = Version::VERSION # Traditional Constant Location
   end
 end

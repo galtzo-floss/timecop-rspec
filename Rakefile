@@ -142,10 +142,10 @@ end
 # rubocop:disable Rake/DuplicateTask
 if Rake::Task.task_defined?("spec") && !Rake::Task.task_defined?("test")
   desc "run spec task with test task"
-  task :test => :spec
+  task test: :spec
 elsif !Rake::Task.task_defined?("spec") && Rake::Task.task_defined?("test")
   desc "run test task with spec task"
-  task :spec => :test
+  task spec: :test
 else
   # Add spec as pre-requisite to 'test'
   Rake::Task[:test].enhance(["spec"])
@@ -216,7 +216,7 @@ begin
       "checksums/**/*.sha256",
       "checksums/**/*.sha512",
       "REEK",
-      "sig/**/*.rbs",
+      "sig/**/*.rbs"
     ]
   end
   defaults << "yard"
@@ -325,7 +325,7 @@ namespace :bench do
 end
 
 desc "Run all benchmarks (alias for bench:run)"
-task :bench => "bench:run"
+task bench: "bench:run"
 
 # --- CI helpers ---
 namespace :ci do
@@ -358,12 +358,12 @@ namespace :ci do
     mapping.select! { |_k, v| existing_basenames.include?(v) }
 
     # Dynamic additions: any workflow in the directory not already in mapping, excluding these:
-    exclusions = %w[
-      auto-assign.yml
-      codeql-analysis.yml
-      danger.yml
-      dependency-review.yml
-      discord-notifier.yml
+    exclusions = [
+      "auto-assign.yml",
+      "codeql-analysis.yml",
+      "danger.yml",
+      "dependency-review.yml",
+      "discord-notifier.yml"
     ]
     dynamic_files = existing_basenames.uniq - mapping.values - exclusions
 
@@ -420,7 +420,7 @@ namespace :ci do
       req["Authorization"] = "token #{token}" if token && !token.empty?
 
       begin
-        res = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => true) { |http| http.request(req) }
+        res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) { |http| http.request(req) }
         if res.is_a?(Net::HTTPSuccess)
           data = JSON.parse(res.body)
           arr = data["workflow_runs"]
@@ -437,7 +437,7 @@ namespace :ci do
         else
           puts "GHA status: request failed (#{res.code})"
         end
-      rescue StandardError => e
+      rescue => e
         puts "GHA status: error #{e.class}: #{e.message}"
       end
     end
@@ -572,14 +572,14 @@ namespace :ci do
           req = Net::HTTP::Get.new(uri)
           req["User-Agent"] = "ci:act rake task"
           req["Authorization"] = "token #{tk}" if tk && !tk.empty?
-          res = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => true) { |http| http.request(req) }
+          res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) { |http| http.request(req) }
           status_q <<
             if res.is_a?(Net::HTTPSuccess)
               process_success_response(res, c, f)
             else
               [c, f, "fail #{res.code}"]
             end
-        rescue StandardError
+        rescue
           status_q << [c, f, "err"]
         end
       end
@@ -631,12 +631,12 @@ namespace :ci do
     # Cleanup: kill any still-running threads
     begin
       workers.each { |t| t.kill if t && t.alive? }
-    rescue StandardError
+    rescue
       # ignore
     end
     begin
       input_thread.kill if input_thread && input_thread.alive?
-    rescue StandardError
+    rescue
       # ignore
     end
 
@@ -677,4 +677,23 @@ namespace :ci do
   # rubocop:enable ThreadSafety/NewThread
 end
 
-task :default => defaults
+### DUPLICATE DRIFT TASKS
+begin
+  require "kettle/drift"
+  Kettle::Drift.install_tasks
+rescue LoadError
+  desc("(stub) kettle:drift:check is unavailable")
+  task("kettle:drift:check") do
+    warn("NOTE: kettle-drift isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+  end
+  desc("(stub) kettle:drift:update is unavailable")
+  task("kettle:drift:update") do
+    warn("NOTE: kettle-drift isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+  end
+  desc("(stub) kettle:drift:force_update is unavailable")
+  task("kettle:drift:force_update") do
+    warn("NOTE: kettle-drift isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+  end
+  desc("(stub) kettle:drift is unavailable")
+  task("kettle:drift" => "kettle:drift:update")
+end

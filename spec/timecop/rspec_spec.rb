@@ -14,12 +14,12 @@ RSpec.describe Timecop::Rspec do
     end
 
     it "returns a SequentialTimeMachine when sequential: true" do
-      expect(described_class.time_machine(:sequential => true)).to be_a(Timecop::Rspec::SequentialTimeMachine)
+      expect(described_class.time_machine(sequential: true)).to be_a(Timecop::Rspec::SequentialTimeMachine)
     end
 
     it "returns the same SequentialTimeMachine instance on repeated calls" do
-      first = described_class.time_machine(:sequential => true)
-      expect(described_class.time_machine(:sequential => true)).to be(first)
+      first = described_class.time_machine(sequential: true)
+      expect(described_class.time_machine(sequential: true)).to be(first)
     end
   end
 

@@ -16,7 +16,7 @@
   "lib/timecop/rspec/travel_log.rb:1676141631": [
     [48, 22, 31, "Style/ClassEqualityComparison: Use `instance_of?(other_start_time.class)` instead of comparing classes.", 3748593914]
   ],
-  "spec/spec_helper.rb:3521929238": [
+  "spec/spec_helper.rb:2862161782": [
     [62, 9, 81, "RSpec/Output: Do not write to stdout in specs.", 650156987]
   ],
   "spec/timecop/rspec/a_time_machine.rb:327584288": [

@@ -2,7 +2,7 @@ require "timecop/rspec"
 
 require_relative "a_time_machine"
 
-RSpec.describe Timecop::Rspec::SequentialTimeMachine do
+RSpec.describe Timecop::Rspec::SequentialTimeMachine, :skip_global_timecop do
   subject(:time_machine) { described_class.new }
 
   let(:some_example) { instance_double(RSpec::Core::Example) }

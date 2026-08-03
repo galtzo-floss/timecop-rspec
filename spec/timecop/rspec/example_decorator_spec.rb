@@ -1,6 +1,6 @@
 require "timecop/rspec"
 
-RSpec.describe Timecop::Rspec::ExampleDecorator do
+RSpec.describe Timecop::Rspec::ExampleDecorator, :skip_global_timecop do
   subject(:decorator) { described_class.new(example_procsy) }
 
   let(:some_example) { instance_double(RSpec::Core::Example) }

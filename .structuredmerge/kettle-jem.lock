@@ -146,7 +146,7 @@ template_state:
     gemfiles/modular/stringio/vHEAD.gemfile.example: e0497ab6dad9667b22725485b781e9d99349a079250eb29cb125d58f01f4a5be
     gemfiles/modular/style.gemfile.example: a15db732f566d958c2459ef549ae3877d984df3d205116e714284d1fe4f9b068
     gemfiles/modular/style_local.gemfile.example: '0083605323d23879dc7223f0198e9f1db24a25fa38730c4dbcc71c7a8a4c307f'
-    gemfiles/modular/templating.gemfile.example: f63e9254dcd76f02406fff515090570d2394dae220faac4f9b3cad6c1a78346a
+    gemfiles/modular/templating.gemfile.example: 3b2db799f879401ec595c54a5c3ca825b1f51a9e8976b932f80f12a06ea9791d
     gemfiles/modular/templating_local.gemfile.example: 84b328af40ee4f9b0355cd5b466f7c7903c49f86e9eb0d1bc3a1f34c8f0f1668
     gemfiles/modular/webrick/r4/v1.9.gemfile.example: 1ee940ff54d5ca3ce7fcff0d82ee9553386979656b9e220d5be5404d0991d5ea
     gemfiles/modular/webrick/vHEAD.gemfile.example: da545f591af987648ffbaba181707480a38dfb375db7d289617986ec2c2ca23b
@@ -1006,8 +1006,8 @@ files:
   gemfiles/modular/templating.gemfile:
     recipe: template_source_application_gemfiles_modular_templating_gemfile
     action: write
-    dest_sha256: f63e9254dcd76f02406fff515090570d2394dae220faac4f9b3cad6c1a78346a
-    input_fingerprint: b2e9467f1d3c22457be40f8d0aa2797e93f521ea9ccf3e801fb228ab17f59d6f
+    dest_sha256: 3b2db799f879401ec595c54a5c3ca825b1f51a9e8976b932f80f12a06ea9791d
+    input_fingerprint: 9cff2a2b0ab55ce9d32c6ce566b9a5ebdebe55b9702a37a3a13fd4bc5ae5989a
     template_sources:
     - gemfiles/modular/templating.gemfile.example
   gemfiles/modular/templating_local.gemfile:
@@ -1091,7 +1091,7 @@ files:
     recipe: template_source_application_lib_timecop_rspec_version_rb
     action: write
     dest_sha256: a00e565d9a4600c4161e5b5db66b4ed5150dbc271b7106cceffb7372d3ffbfaf
-    input_fingerprint: d4ac2fe8cfaed00c0daee79b21e8e010ee8996142c05838bb1f52d109c8f9cdf
+    input_fingerprint: bf99f626359df74d03a4804fe1a49880a29cf51965e9ebf613bc0a041e49a275
     template_sources:
     - lib/gem/version.rb.example
   mise.toml:
@@ -1133,6 +1133,6 @@ files:
     recipe: template_source_application_timecop_rspec_gemspec
     action: write
     dest_sha256: 00af4be7843be230f7d5479a431bb0d7a98c7da18bfb80cc1a7dddbc78f07ed3
-    input_fingerprint: 61ab372845628df2c5dcbaf4f2e957b690f8f82b99de2466fe4247b1e46e4af1
+    input_fingerprint: a37d4b5a38c50f474ec0ffd5f07c44a5b69b581cef950f99613a47cc4ba1c6b7
     template_sources:
     - gem.gemspec.example

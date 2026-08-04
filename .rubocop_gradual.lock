@@ -3,6 +3,9 @@
     [36, 20, 2, "Lint/Syntax: unexpected token tLSHFT\n(Using Ruby 2.0 parser; configure using `TargetRubyVersion` parameter, under `AllCops`)", 5859461],
     [40, 7, 4, "Lint/Syntax: unexpected token tCONSTANT\n(Using Ruby 2.0 parser; configure using `TargetRubyVersion` parameter, under `AllCops`)", 2088671139]
   ],
+  "gemfiles/modular/templating.gemfile:3018447732": [
+    [14, 3, 47, "Bundler/DuplicatedGem: Gem `tree_sitter_language_pack` requirements already given on line 10 of the Gemfile.", 3843603197]
+  ],
   "lib/timecop/rspec.rb:4051037237": [
     [3, 1, 56, "Lint/NonDeterministicRequireOrder: Sort files before requiring them.", 4219798441],
     [42, 9, 12, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 990613604]

@@ -1,6 +1,7 @@
 class Timecop
   module Rspec
     module Version
+      VERSION: String
     end
 
     class TimeMachine
@@ -36,6 +37,7 @@ class Timecop
     def self.time_machine: (*untyped) -> (SequentialTimeMachine | TimeMachine)
     def self.global_time_configured?: () -> bool
     def self.global_time: () -> ::Time
+    VERSION: String
   end
 end
 

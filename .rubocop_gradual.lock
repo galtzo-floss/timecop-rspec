@@ -119,7 +119,7 @@
     [21, 28, 9, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 1635699009],
     [44, 11, 28, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 830037094]
   ],
-  "timecop-rspec.gemspec:914000611": [
+  "timecop-rspec.gemspec:3425662763": [
     [25, 8, 4, "Lint/LtsRuby/UnavailableMethod: Thread#name= is unavailable before Ruby 2.3.", 2087876002],
     [50, 24, 9, "Lint/LtsRuby/UnavailableMethod: Symbol#end_with? is unavailable before Ruby 2.7.", 308216808],
     [56, 16, 16, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 3147164910],

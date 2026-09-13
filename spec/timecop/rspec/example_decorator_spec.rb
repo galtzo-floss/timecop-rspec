@@ -42,8 +42,7 @@ RSpec.describe Timecop::Rspec::ExampleDecorator, :skip_global_timecop do
         # ensure DATE fallback isn't accidentally read in this context
         allow(ENV).to receive(:[]).with("GLOBAL_TIME_TRAVEL_DATE").and_return(nil)
         # Clear any memoized value to ensure deterministic assertions
-        sc = Timecop::Rspec.singleton_class
-        sc.remove_instance_variable(:@global_time) if sc.instance_variable_defined?(:@global_time)
+        Timecop::Rspec.remove_instance_variable(:@global_time) if Timecop::Rspec.instance_variable_defined?(:@global_time)
       end
 
       it "returns :travel for method" do
@@ -61,8 +60,7 @@ RSpec.describe Timecop::Rspec::ExampleDecorator, :skip_global_timecop do
       before do
         allow(ENV).to receive(:[]).with("GLOBAL_TIME_TRAVEL_TIME").and_return(global_time_str)
         allow(ENV).to receive(:[]).with("GLOBAL_TIME_TRAVEL_DATE").and_return(nil)
-        sc = Timecop::Rspec.singleton_class
-        sc.remove_instance_variable(:@global_time) if sc.instance_variable_defined?(:@global_time)
+        Timecop::Rspec.remove_instance_variable(:@global_time) if Timecop::Rspec.instance_variable_defined?(:@global_time)
         metadata[:skip_global_timecop] = true
       end
 

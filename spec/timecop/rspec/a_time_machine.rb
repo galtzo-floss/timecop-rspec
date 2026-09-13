@@ -19,6 +19,11 @@ RSpec.shared_examples "a time machine" do
     before do
       allow(ENV).to receive(:[]).and_call_original
       allow(ENV).to receive(:[]).with("GLOBAL_TIME_TRAVEL_TIME").and_return(global_travel_time)
+      # Timecop::Rspec memoizes the parsed global time; the kettle-test harness
+      # may have primed it before ENV was stubbed, so start each example fresh.
+      if Timecop::Rspec.instance_variable_defined?(:@global_time)
+        Timecop::Rspec.remove_instance_variable(:@global_time)
+      end
       # Time.zone is not used without ActiveSupport
     end
 

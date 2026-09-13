@@ -112,8 +112,8 @@
     [205, 32, 9, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 1635699009],
     [216, 32, 9, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 2544423058]
   ],
-  "spec/timecop/rspec/example_decorator_spec.rb:956870363": [
-    [66, 17, 22, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 1084647194]
+  "spec/timecop/rspec/example_decorator_spec.rb:793735579": [
+    [64, 17, 22, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 1084647194]
   ],
   "spec/timecop/rspec/sequential_time_machine_spec.rb:156590099": [
     [21, 28, 9, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 1635699009],

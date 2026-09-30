@@ -3,9 +3,9 @@
     {
       "file": "CHANGELOG.md",
       "lines": [
-        112,
-        129,
-        150
+        117,
+        134,
+        155
       ]
     }
   ],
@@ -13,8 +13,8 @@
     {
       "file": "CHANGELOG.md",
       "lines": [
-        141,
-        149
+        146,
+        154
       ]
     }
   ],
@@ -31,8 +31,8 @@
     {
       "file": "Rakefile",
       "lines": [
-        542,
-        569
+        544,
+        571
       ]
     }
   ],
@@ -40,8 +40,8 @@
     {
       "file": "Rakefile",
       "lines": [
-        397,
-        414
+        399,
+        416
       ]
     }
   ],
@@ -49,8 +49,17 @@
     {
       "file": "Rakefile",
       "lines": [
-        541,
-        568
+        543,
+        570
+      ]
+    }
+  ],
+  "exec_cmd: \"kettle-test\"\nrubygems: latest": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        43,
+        49
       ]
     }
   ],
@@ -58,8 +67,8 @@
     {
       "file": "Rakefile",
       "lines": [
-        398,
-        415
+        400,
+        417
       ]
     }
   ],
@@ -67,8 +76,8 @@
     {
       "file": "Rakefile",
       "lines": [
-        533,
-        688
+        535,
+        690
       ]
     }
   ]

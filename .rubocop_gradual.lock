@@ -1,7 +1,7 @@
 {
-  "Rakefile:2130657407": [
-    [683, 24, 13, "Lint/LtsRuby/UnavailableMethod: Process#clock_gettime is unavailable before Ruby 2.1.", 2005665137],
-    [689, 25, 13, "Lint/LtsRuby/UnavailableMethod: Process#clock_gettime is unavailable before Ruby 2.1.", 2005665137]
+  "Rakefile:3540597881": [
+    [685, 24, 13, "Lint/LtsRuby/UnavailableMethod: Process#clock_gettime is unavailable before Ruby 2.1.", 2005665137],
+    [691, 25, 13, "Lint/LtsRuby/UnavailableMethod: Process#clock_gettime is unavailable before Ruby 2.1.", 2005665137]
   ],
   "bin/prepare-commit-msg:881294558": [
     [36, 20, 2, "Lint/Syntax: unexpected token tLSHFT\n(Using Ruby 2.0 parser; configure using `TargetRubyVersion` parameter, under `AllCops`)", 5859461],

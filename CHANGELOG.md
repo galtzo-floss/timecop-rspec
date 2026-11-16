@@ -50,9 +50,9 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260801-001 - Generated README gem dashboard links now
   use ClickGems instead of BestGems.
 
-- [kc] kettle-jem/prepare: updated 25 project files:
+- [kc] kettle-jem/prepare: updated 27 project files:
   - configuration (2)
-  - dependencies (23)
+  - dependencies (25)
 
 - [kc] kettle-jem/template: updated 53 project files:
   - code and tests (4)
@@ -106,6 +106,7 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260728-004 - Generated dep-heads workflows now use the
   setup-ruby Bundler install path for direct appraisal Gemfiles, avoiding rv
   lockfile parser failures on Git and path dependencies.
+
 ### Security
 
 ## [1.0.3] - 2025-08-20
